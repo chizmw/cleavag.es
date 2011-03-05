@@ -1,0 +1,6 @@
+[% IF c.user && c.user.email %]
+<div id="user_gravatar">
+[% USE Gravatar %]
+<img src="[% Gravatar( email => c.user.email, rating => 'PG', default => c.uri_for("/static/images/mystery_head.jpg") ) | html %]" alt="[% c.user.first_name | html %]" width="80" height="80" />
+</div>
+[% END %]

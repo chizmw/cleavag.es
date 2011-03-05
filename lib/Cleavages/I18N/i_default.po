@@ -1,3 +1,6 @@
+msgid "%quant(%1,RATING)"
+msgstr "%quant(%1,rating,ratings)"
+
 msgid "DummyString"
 msgstr "SomethingInteresting"
 
@@ -9,6 +12,9 @@ msgstr "Account Comparison"
 
 msgid "ALREADY REGISTERED"
 msgstr "Already Registered?"
+
+msgid "BACK_TO_CLEAVAGE"
+msgstr "Back To The Cleavage"
 
 msgid "BASIC"
 msgstr "Basic"
@@ -52,6 +58,9 @@ msgstr "Create New Event"
 msgid "CREATE NEW LOCATION"
 msgstr "Create New Location"
 
+msgid "DONT_WANT_TO_REGISTER"
+msgstr "Don't want to register?"
+
 msgid "EMAIL ADDRESS"
 msgstr "Email Address"
 
@@ -85,6 +94,9 @@ msgstr "First Name"
 msgid "FORM CLEAVAGE FILE"
 msgstr "Cleavage file"
 
+msgid "GIMME_RANDOM_CLEAVAGE"
+msgstr "Gimme Random Cleavage"
+
 msgid "GO"
 msgstr "Go"
 
@@ -97,6 +109,9 @@ msgstr "Guest User"
 msgid "HELP"
 msgstr "Help"
 
+msgid "IF_YOU_DONT_WANT_TO_REGISTER"
+msgstr "If you would prefer not to register at this time you may still explore the site and rate images."
+
 msgid "IF ALREADY REGISTERED"
 msgstr "If you've already registered with the site, use the form below to log-in"
 
@@ -106,8 +121,14 @@ msgstr "The image's dimensions are too big. Please upload images with the longes
 msgid "INVITATION ONLY"
 msgstr "Invitation Only"
 
+msgid "LAST_RATING"
+msgstr "Last Rating"
+
 msgid "LAST NAME"
 msgstr "Last Name"
+
+msgid "LINK"
+msgstr "Link"
 
 msgid "LOG IN"
 msgstr "Log-In"
@@ -132,6 +153,12 @@ msgstr "Me"
 
 msgid "MISSING CLEAVAGE FILE"
 msgstr "Please specify some cleavage to upload"
+
+msgid "MISSING_PASSWORD"
+msgstr "Please provide your username"
+
+msgid "MISSING_USERNAME"
+msgstr "Please provide your password"
 
 msgid "MORE THAN %1 MONTHS IN ADVANCE"
 msgstr "More than %1 months in advance"
@@ -181,6 +208,9 @@ msgstr "Platinum"
 msgid "PROVE YOU ARE HUMAN"
 msgstr "Prove you're human"
 
+msgid "RATE_CONTROL_TITLE"
+msgstr "Rate Their Cleavage"
+
 msgid "RATING OUT OF RANGE'"
 msgstr "the rating was not in the allowed range"
 
@@ -199,7 +229,7 @@ msgstr "Silver"
 msgid "TOP-CLEAVAGE"
 msgstr "Top-Cleavage"
 
-msgid "UPLOAD CLEAVAGE"
+msgid "UPLOAD_CLEAVAGE"
 msgstr "Upload Cleavage"
 
 msgid "USERNAME"

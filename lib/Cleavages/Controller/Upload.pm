@@ -42,10 +42,6 @@ sub cleavage : Local {
     # as we can be the 'victim' of a forward() we specify the template
     $c->stash->{template} = 'upload/cleavage';
 
-    $c->log->debug(
-        pp($c->user)
-    );
-
     # send away intruders!
     if ( not $c->user ) {
         # set the post login page to be back here
@@ -91,6 +87,7 @@ sub cleavage : Local {
                 image/png
             >;
             my $mt = $cleavage_upload->mimetype;
+$c->log->info("MIME-TYPE: $mt");
             if (not grep { m{^$mt$}xms } @allowed_mimetypes) {
                 $c->forward(
                     'add_form_invalid',
@@ -116,6 +113,14 @@ sub cleavage : Local {
                     return;
                 }
             }
+            else {
+                    $c->forward(
+                        'add_form_invalid',
+                        ['cleavage_file', 'not-an-image']
+                    );
+                    return;
+            }
+
 
 
             # store the file locally
@@ -123,6 +128,22 @@ sub cleavage : Local {
                 $file_info->{filepath},
                 $cleavage_upload->slurp,
             );
+
+            # do some thumbnail prep
+            my $thumbnail = $cleavage_upload->thumbnail(
+                {
+                    density     => '120x120',
+                    format      => $cleavage_upload->extension,
+                    quality     => 100
+                }
+            );
+            # store the thumbnail locally
+            $c->model('FS::Cleavage')->splat(
+                $file_info->{thumbnail},
+                $thumbnail->ImageToBlob($cleavage_upload->extension),
+            );
+
+            $c->log->info( ref $thumbnail );
 
             # store the file information in the database
             # add the new event in a transaction
@@ -176,6 +197,13 @@ sub _file_info : Private{
         $file_info{filename}
     );
 
+    # and have the full path to the file
+    $file_info{thumbnail} = Path::Class::File->new(
+        'thumb',
+        reverse(@dir_path),
+        $file_info{filename}
+    );
+
     # store the upload object so we can pass it around
     $file_info{upload} = $uploaded_file;
 
@@ -210,6 +238,8 @@ sub _txn_add_file : Private {
             gender              => { name => $results->valid('gender') },
             cleavage_type       => { name => $results->valid('cleavage_type') },
             cleavage_relation   => $results->valid('cleavage_relation'),
+
+            thumbnail           => $file_info->{thumbnail},
         },
         {
             key                 => q{file_md5_hex_key},

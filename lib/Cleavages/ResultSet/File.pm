@@ -84,16 +84,32 @@ sub add_rating {
     return;
 }
 
+sub most_recent {
+    my ($resultset) = @_;
+
+    my $most_recent = $resultset->search(
+        {},
+        {
+            order_by    => 'uploaded DESC',
+            rows        => 1,
+        }
+    )->first();
+
+    return $most_recent;
+}
+
 sub random_file {
     my ($resultset) = @_;
 
-    return $resultset->search(
+    my $random = $resultset->search(
         {},
         {
             order_by    => \'RANDOM()',
             rows        => 1,
         },
     )->first;
+
+    return $random;
 }
 
 sub top_rated {

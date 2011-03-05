@@ -1,8 +1,10 @@
 Changes
 cleavages.conf
+cleavages.l4p
 db/cleavage-schema.sql
-db/patch_0-0-2_to_0-0-3.sql
-db/patch_0-0-3_to_0-0-4.sql
+db/patch_0.0.2_to_0.0.3.sql
+db/patch_0.0.3_to_0.0.4.sql
+db/patch_0.0.4_to_0.0.8.sql
 inc/Module/AutoInstall.pm
 inc/Module/Install.pm
 inc/Module/Install/AutoInstall.pm
@@ -43,6 +45,7 @@ MANIFEST			This list of files
 MANIFEST.SKIP
 META.yml
 README
+root/base/cleavage/none
 root/base/cleavage/rate_cleavage
 root/base/cleavage/rate_control
 root/base/dfv/display_validation_messages
@@ -53,6 +56,7 @@ root/base/google/analytics
 root/base/header
 root/base/index
 root/base/upload/cleavage
+root/base/user/avatar
 root/base/user/login
 root/base/user/signup
 root/favicon.ico
@@ -462,3 +466,4 @@ t/controller_User.t
 t/model_Cleavages.t
 t/model_FS-Cleavage.t
 t/view_TT.t
+TODO

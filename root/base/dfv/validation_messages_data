@@ -9,6 +9,9 @@
             new_password_confirm        => 'You must confirm your password',
             new_username                => 'You must provide a username',
 
+            password                    => 'MISSING_PASSWORD',
+            username                    => 'MISSING_USERNAME',
+
             moon_stick                  => 'I demand the MOON! On a STICK!',
         },
 

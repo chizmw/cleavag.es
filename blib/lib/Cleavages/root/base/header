@@ -2,19 +2,15 @@
 <html lang=en>
     <head>
         <title>Cleavages</title>
-        <meta name="author" content="Chisel Wright">
+        <meta name="author"     content="iLook">
+        <meta name="contact"    content="i.look@cleavag.es">
+        <meta name="appname"    content="[%c.config.name%]">
+        <meta name="appver"     content="[%c.config.version%]">
 
         <link rel="stylesheet" type="text/css" href="[%c.uri_for('/static/yui/reset-fonts-grids/reset-fonts-grids.css')%]"> 
         <link rel="stylesheet" type="text/css" href="[%c.uri_for('/static/css/cleavages.css')%]" media="screen">
     </head>
 
     <body>
-
-        [% IF c.user && c.user.email %]
-        <div id="user_gravatar">
-        [% USE Gravatar %]
-        <img src="[% Gravatar( email => c.user.email, rating => 'PG', default => c.uri_for("/static/images/mystery_head.jpg") ) | html %]" alt="[% c.user.first_name | html %]" width="80" height="80" />
-        </div>
-        [% END %]
-
+        [% PROCESS user/avatar %]
         [% PROCESS dfv/display_validation_messages %]

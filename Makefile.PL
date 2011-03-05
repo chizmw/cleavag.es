@@ -3,7 +3,7 @@
 use inc::Module::Install;
 
 name        'Cleavages';
-version     '0.0.7';
+version     '0.0.8';
 all_from    'lib/Cleavages.pm';
 
 requires 'Catalyst::Runtime' => '5.7015';
@@ -29,8 +29,10 @@ requires (
     'Catalyst::Plugin::Upload::Image::Magick'       => 0,
     'Catalyst::Plugin::Upload::MIME'                => '0.01',
 
+    'Catalyst::Authentication::Store::DBIx::Class'  => 0,
     'Catalyst::Controller::reCAPTCHA'               => 0,
     'Catalyst::Controller::Validation::DFV'         => 0,
+    'Catalyst::Log::Log4perl'                       => 0,
     'Catalyst::Model::DBIC::Schema'                 => 0,
     'Catalyst::Model::File'                         => 0,
     'Catalyst::View::TT'                            => 0,

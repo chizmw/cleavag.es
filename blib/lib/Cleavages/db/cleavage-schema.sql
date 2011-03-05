@@ -81,3 +81,8 @@ BEGIN;
     ALTER TABLE file OWNER TO cleavages;
 
 COMMIT;
+
+-- now run each patch file
+\i db/patch_0.0.2_to_0.0.3.sql
+\i db/patch_0.0.3_to_0.0.4.sql
+\i db/patch_0.0.4_to_0.0.8.sql

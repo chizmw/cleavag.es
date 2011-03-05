@@ -60,6 +60,13 @@ __PACKAGE__->add_columns(
   },
   "rating_summary",
   { data_type => "integer", default_value => undef, is_nullable => 1, size => 4 },
+  "thumbnail",
+  {
+    data_type => "text",
+    default_value => undef,
+    is_nullable => 1,
+    size => undef,
+  },
 );
 __PACKAGE__->set_primary_key("id");
 __PACKAGE__->add_unique_constraint("file_md5_hex_key", ["md5_hex"]);
@@ -93,8 +100,8 @@ __PACKAGE__->has_many(
 );
 
 
-# Created by DBIx::Class::Schema::Loader v0.04005 @ 2009-01-10 23:36:56
-# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:s8/eTl+oZu3VBcKqzwvI1w
+# Created by DBIx::Class::Schema::Loader v0.04005 @ 2009-01-15 20:37:52
+# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:O4eab3JydXkyoljSN75nzw
 
 __PACKAGE__->resultset_class('Cleavages::ResultSet::File');
 

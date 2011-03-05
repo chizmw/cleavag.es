@@ -69,7 +69,7 @@
     </div>
 
     <div style="width:300px; margin-left:auto; margin-right: auto;" class="yui-g top-padded">
-        <input type="submit" value="[%l('UPLOAD CLEAVAGE')%]""/>
+        <input type="submit" value="[%l('UPLOAD_CLEAVAGE')%]""/>
     </div>
 </form>
 

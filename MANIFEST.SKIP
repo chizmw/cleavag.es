@@ -8,3 +8,7 @@ Cleavages*gz
 Makefile.old
 MANIFEST.bak
 note.txt
+.*\.log
+.*\.l4j
+svk-commit.*\.tmp
+cleavages.l4p.fun

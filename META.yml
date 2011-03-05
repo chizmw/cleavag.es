@@ -15,6 +15,7 @@ no_index:
     - t
 requires:
   Catalyst::Action::RenderView: 0
+  Catalyst::Authentication::Store::DBIx::Class: 0
   Catalyst::Controller::Validation::DFV: 0
   Catalyst::Controller::reCAPTCHA: 0
   Catalyst::Model::DBIC::Schema: 0
@@ -43,4 +44,4 @@ requires:
   Template::Plugin::Gravatar: 0
   parent: 0
   version: 0
-version: 0.0.7
+version: 0.0.8

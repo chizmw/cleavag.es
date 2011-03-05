@@ -35,10 +35,9 @@ my %dfv_profile_for = (
     },
 );
 
-sub index :Path :Args(0) {
+sub index :Chained('base') Path Args(0) {
     my ( $self, $c ) = @_;
-    $c->response->status('404');
-    $c->response->body( 'Cleavages!' );
+    $c->detach('random_cleavage');
 }
 
 sub cleavage_file : Regex('^cleavage/show/([-_\./0-9a-zA-z]+)$') {
@@ -56,20 +55,13 @@ sub cleavage_file : Regex('^cleavage/show/([-_\./0-9a-zA-z]+)$') {
         return;
     }
 
-    if (0) {
-        # for now assume everything's a JPG
-        $c->response->content_type('image/jpeg');
-        $c->response->body( $body );
-    }
-    else {
-        # serve via /static
-        $c->response->redirect(
-            $c->uri_for(
-                  q{/static/cleavage/}
-                . $rel_path
-            )
-        );
-    }
+    # serve via /static
+    $c->response->redirect(
+        $c->uri_for(
+                q{/static/cleavage/}
+            . $rel_path
+        )
+    );
 
     return;
 }
@@ -79,18 +71,51 @@ sub base : Chained('/language') PathPart('cleavage') CaptureArgs(0) {
     return;
 }
 
+sub no_cleavage : Chained('base') PathPart('none') Args(0) {
+    my ($self, $c) = @_;
+    $c->stash->{template} = 'cleavage/none';
+    return;
+}
+
 sub random_cleavage : Chained('base') PathPart('random') Args(0) {
     my ($self, $c) = @_;
 
     # pick a random file
     my $file = $c->model('Cleavages::File')->random_file;
+    # make sure we have one (that we're not in the terrible position of having
+    # no files)
+    if (not defined $file) {
+        $c->detach('no_cleavage');
+    }
+
+    # if we have a previously rated image, make sure we pick something
+    # different
+    if (
+        exists $c->session->{last_rated_file}
+            and
+        ($file->id == $c->session->{last_rated_file}->id)
+            and
+        ($c->model('Cleavages::File')->count > 1)
+    ) {
+        # log that we hit two-in-a-row
+        $c->log->info(
+              q{Just rated this image. [id=}
+            . $file->id
+            . q{] Choosing another.}
+        );
+        # pick another (random) image
+        $c->forward(
+            q{random_cleavage}
+        );
+    }
 
     # do the work we do for a specified file
-    $c->forward(
+    $c->detach(
         'rate_cleavage',
         [ $file->md5_hex ]
     );
 
+    # we shouldn't get here
     return;
 }
 
@@ -126,13 +151,6 @@ sub rate_cleavage : Chained('base') PathPart('rate') Args(1) {
         $c->forward('form_check', [$dfv_profile_for{rating}]);
         # if the form data was valid
         if ($c->stash->{validation}->success) {
-            # remember what we rated
-            $c->session->{last_rated_file}          = $file;
-            # XXX don't know why this barfs in template
-            $c->session->{last_rated_file_summary}  = $c->session->{last_rated_file}->rating_summary;
-
-            $c->log->debug('LAST RATED: ' . $file->filename);
-
             # add the new rating
             $c->model('Cleavages::File')->add_rating(
                 {
@@ -142,9 +160,10 @@ sub rate_cleavage : Chained('base') PathPart('rate') Args(1) {
                 }
             );
 
-            $c->log->debug(
-                'JUST RATED: ' . $file->filename
-            );
+            # remember what we rated
+            $c->session->{last_rated_file}          = $file;
+            # XXX don't know why this barfs in template
+            $c->session->{last_rated_file_summary}  = $c->session->{last_rated_file}->rating_summary;
 
             # redirect to lose the POST and prevent reloads
             # (yeah, can't stop back+reload ... yet)

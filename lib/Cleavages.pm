@@ -6,6 +6,7 @@ use warnings;
 use Cleavages::Version;  our $VERSION = $Cleavages::VERSION;
 
 use Catalyst::Runtime '5.70';
+use Catalyst::Log::Log4perl;
 
 # Set flags and add plugins for the application
 #
@@ -31,6 +32,7 @@ use Catalyst qw/
     Authentication
 
     Upload::Image::Magick
+    Upload::Image::Magick::Thumbnail
     Upload::Digest
     Upload::MIME
     Images
@@ -59,6 +61,13 @@ __PACKAGE__->config( name => 'Cleavages' );
 
 # Start the application
 __PACKAGE__->setup();
+
+# use log4perl
+__PACKAGE__->log(
+    Catalyst::Log::Log4perl->new(
+        __PACKAGE__->config->{log4perl_conf}
+    )
+);
 
 # a helper to localise text
 sub i18nise {

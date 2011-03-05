@@ -174,6 +174,16 @@ a:hover.fake-button  {
     padding:                2px;
 }
 
+.rate-control-title {
+    font-size:              108%;
+    font-weight:            bold;
+    padding:                2px;
+
+    margin-left:            auto;
+    margin-right:           auto;
+    text-align:             center;
+}
+
 .vote-link label {
     display:                block;
     width:                  24px;
