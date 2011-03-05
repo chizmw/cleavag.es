@@ -11,6 +11,7 @@
 
             password                    => 'MISSING_PASSWORD',
             username                    => 'MISSING_USERNAME',
+            verified_permission         => 'MISSING_UPLOAD_VERIFICATION',
 
             moon_stick                  => 'I demand the MOON! On a STICK!',
         },

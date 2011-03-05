@@ -19,9 +19,9 @@
 #     NO_META => q[1]
 #     PL_FILES => {  }
 #     PREREQ_PM => { Catalyst::Plugin::ConfigLoader=>q[0], Catalyst::Controller::reCAPTCHA=>q[0], Catalyst::Plugin::Session::Store::FastMmap=>q[0], Catalyst::Log::Log4perl=>q[0], Catalyst::Plugin::Session::State::Cookie=>q[0], Config::General=>q[0], Template::Plugin::Gravatar=>q[0], Catalyst::Authentication::Store::DBIx::Class=>q[0], Catalyst::Controller::Validation::DFV=>q[0], Catalyst::View::TT=>q[0], parent=>q[0], ExtUtils::MakeMaker=>q[6.42], Data::FormValidator::Constraints=>q[0], Catalyst::Model::File=>q[0], Catalyst::Plugin::Session=>q[0], Perl6::Export::Attrs=>q[0], Catalyst::Model::DBIC::Schema=>q[0], Path::Class=>q[0], Catalyst::Plugin::Upload::Digest=>q[0.02], Catalyst::Plugin::FillInForm=>q[0], Digest::MD5=>q[0], DBIx::Class=>q[0], Catalyst::Plugin::Images=>q[0], Catalyst::Plugin::Static::Simple=>q[0], version=>q[0], Catalyst::Plugin::StackTrace=>q[0], Catalyst::Action::RenderView=>q[0], Catalyst::Plugin::I18N=>q[0], Catalyst::Plugin::Authentication=>q[0.100091], Catalyst::Plugin::Upload::MIME=>q[0.01], Catalyst::Runtime=>q[5.7015], Catalyst::Plugin::Upload::Image::Magick=>q[0] }
-#     VERSION => q[0.0.8]
+#     VERSION => q[0.0.9]
 #     dist => {  }
-#     test => { TESTS=>q[t/01app.t t/02pod.t t/03podcoverage.t t/controller_Cleavage.t t/controller_Upload.t t/controller_User.t t/model_Cleavages.t t/model_FS-Cleavage.t t/view_TT.t] }
+#     test => { TESTS=>q[t/01app.t t/02pod.t t/03podcoverage.t t/controller_Cleavage.t t/controller_Upload.t t/controller_User.t t/mime.t t/model_Cleavages.t t/model_FS-Cleavage.t t/view_TT.t] }
 
 # --- MakeMaker post_initialize section:
 
@@ -61,11 +61,11 @@ DIRFILESEP = /
 DFSEP = $(DIRFILESEP)
 NAME = Cleavages
 NAME_SYM = Cleavages
-VERSION = 0.0.8
+VERSION = 0.0.9
 VERSION_MACRO = VERSION
-VERSION_SYM = 0_0_8
+VERSION_SYM = 0_0_9
 DEFINE_VERSION = -D$(VERSION_MACRO)=\"$(VERSION)\"
-XS_VERSION = 0.0.8
+XS_VERSION = 0.0.9
 XS_VERSION_MACRO = XS_VERSION
 XS_DEFINE_VERSION = -D$(XS_VERSION_MACRO)=\"$(XS_VERSION)\"
 INST_ARCHLIB = blib/arch
@@ -334,7 +334,7 @@ RCS_LABEL = rcs -Nv$(VERSION_SYM): -q
 DIST_CP = best
 DIST_DEFAULT = tardist
 DISTNAME = Cleavages
-DISTVNAME = Cleavages-0.0.8
+DISTVNAME = Cleavages-0.0.9
 
 
 # --- MakeMaker macro section:
@@ -862,7 +862,7 @@ $(MAKE_APERL_FILE) : $(FIRST_MAKEFILE) pm_to_blib
 TEST_VERBOSE=0
 TEST_TYPE=test_$(LINKTYPE)
 TEST_FILE = test.pl
-TEST_FILES = t/01app.t t/02pod.t t/03podcoverage.t t/controller_Cleavage.t t/controller_Upload.t t/controller_User.t t/model_Cleavages.t t/model_FS-Cleavage.t t/view_TT.t
+TEST_FILES = t/01app.t t/02pod.t t/03podcoverage.t t/controller_Cleavage.t t/controller_Upload.t t/controller_User.t t/mime.t t/model_Cleavages.t t/model_FS-Cleavage.t t/view_TT.t
 TESTDB_SW = -d
 
 testdb :: testdb_$(LINKTYPE)
@@ -888,7 +888,7 @@ testdb_static :: testdb_dynamic
 # --- MakeMaker ppd section:
 # Creates a PPD (Perl Package Description) for a binary distribution.
 ppd :
-	$(NOECHO) $(ECHO) '<SOFTPKG NAME="$(DISTNAME)" VERSION="0,0,8,0">' > $(DISTNAME).ppd
+	$(NOECHO) $(ECHO) '<SOFTPKG NAME="$(DISTNAME)" VERSION="0,0,9,0">' > $(DISTNAME).ppd
 	$(NOECHO) $(ECHO) '    <TITLE>$(DISTNAME)</TITLE>' >> $(DISTNAME).ppd
 	$(NOECHO) $(ECHO) '    <ABSTRACT>Catalyst based application</ABSTRACT>' >> $(DISTNAME).ppd
 	$(NOECHO) $(ECHO) '    <AUTHOR>Chisel Wright,,,</AUTHOR>' >> $(DISTNAME).ppd

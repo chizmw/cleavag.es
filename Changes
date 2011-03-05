@@ -1,5 +1,10 @@
 This file documents the revision history for Perl extension Cleavages.
 
+0.0.9   Mon Jan 19 19:01:37 GMT 2009
+    - added "anonymous" and "yes, I'm allowed to upload this"
+    - add test to check for mime-type issue
+    - CSS/layout changes
+
 0.0.8   Sat Jan 17 16:54:21 GMT 2009
     - don't show same image two-in-a-row when random-rating
     - switch to Log4perl

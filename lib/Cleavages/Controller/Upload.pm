@@ -18,6 +18,11 @@ my %dfv_profile_for = (
             cleavage_type
             cleavage_relation
             gender
+            verified_permission
+        >],
+
+        optional => [qw<
+            remain_anonymous
         >],
 
         filters => 'trim',
@@ -87,7 +92,6 @@ sub cleavage : Local {
                 image/png
             >;
             my $mt = $cleavage_upload->mimetype;
-$c->log->info("MIME-TYPE: $mt");
             if (not grep { m{^$mt$}xms } @allowed_mimetypes) {
                 $c->forward(
                     'add_form_invalid',
@@ -113,14 +117,6 @@ $c->log->info("MIME-TYPE: $mt");
                     return;
                 }
             }
-            else {
-                    $c->forward(
-                        'add_form_invalid',
-                        ['cleavage_file', 'not-an-image']
-                    );
-                    return;
-            }
-
 
 
             # store the file locally
@@ -240,10 +236,10 @@ sub _txn_add_file : Private {
             cleavage_relation   => $results->valid('cleavage_relation'),
 
             thumbnail           => $file_info->{thumbnail},
+
+            remain_anonymous    => ($results->valid('remain_anonymous')     || 0),
+            verified_permission => ($results->valid('verified_permission')  || 0),
         },
-        {
-            key                 => q{file_md5_hex_key},
-        }
     );
 
     return;

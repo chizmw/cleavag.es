@@ -1,5 +1,9 @@
         [% PROCESS google/adsense %]
         [% PROCESS google/analytics %]
+        <div class="ft">
+        <a href="mailto:&#105;.look&#64;cleavag.es">[% c.image_tag("ilookat.png", {"alt" => "Contact Us", title => "Contact Us"}) %]</a>
+        <a href="http://www.linode.com/?r=6988692ebcb3da97318a6c22c431739ec4b309f4">[% c.image_tag("powered-by-linode-2.png", {"alt" => "Cleavage", title => "Cleavage"}) %]</a>
+        </div>
     </body>
 </html>
 

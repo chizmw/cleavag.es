@@ -5,6 +5,7 @@ db/cleavage-schema.sql
 db/patch_0.0.2_to_0.0.3.sql
 db/patch_0.0.3_to_0.0.4.sql
 db/patch_0.0.4_to_0.0.8.sql
+db/patch_0.0.8_to_0.0.9.sql
 inc/Module/AutoInstall.pm
 inc/Module/Install.pm
 inc/Module/Install/AutoInstall.pm
@@ -72,7 +73,9 @@ root/static/images/btn_88x31_powered_shadow.png
 root/static/images/catalyst_logo.png
 root/static/images/cleavages-logo-001.jpg
 root/static/images/cleavages-logo-002.jpg
+root/static/images/ilookat.png
 root/static/images/mystery_head.jpg
+root/static/images/powered-by-linode-2.png
 root/static/yui/animation/animation-debug.js
 root/static/yui/animation/animation-min.js
 root/static/yui/animation/animation.js
@@ -463,6 +466,7 @@ t/03podcoverage.t
 t/controller_Cleavage.t
 t/controller_Upload.t
 t/controller_User.t
+t/mime.t
 t/model_Cleavages.t
 t/model_FS-Cleavage.t
 t/view_TT.t

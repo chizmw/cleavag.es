@@ -1,13 +1,13 @@
-<div style="height:100px"></div>
-
-<p>[%l('SELECT CLEAVAGE')%]:</p>
+<div style="height:25px"></div>
 
 <form action="" method="post" enctype="multipart/form-data">
+    <p class="upload-title top-padded">[%l('SELECT CLEAVAGE')%]:</p>
+
     <input type="file" id="cleavage_file" name="cleavage_file" />
 
-    <p class="top-padded">[%l('CLASSIFY CLEAVAGE')%]:</p>
+    <p class="upload-title top-padded">[%l('CLASSIFY CLEAVAGE')%]:</p>
 
-    <p class="top-padded">[%l('CLEAVAGE GENDER')%]:</p>
+    <p class="upload-heading top-padded">[%l('CLEAVAGE GENDER')%]:</p>
 
     <div style="width:300px; margin-left:auto; margin-right: auto;" class="yui-g">
         <div class="yui-u first">
@@ -25,7 +25,7 @@
         </div>
     </div>
 
-    <p class="top-padded">[%l('CLEAVAGE LOCATION')%]:</p>
+    <p class="upload-heading top-padded">[%l('CLEAVAGE LOCATION')%]:</p>
 
     <div style="width:300px; margin-left:auto; margin-right: auto;" class="yui-g">
         <div class="yui-u first">
@@ -43,7 +43,7 @@
         </div>
     </div>
 
-    <p class="top-padded">[%l('CLEAVAGE RELATION')%]</p>
+    <p class="upload-heading top-padded">[%l('CLEAVAGE RELATION')%]</p>
 
     <div style="width:400px; margin-left:auto; margin-right: auto;" class="yui-gb">
         <div class="yui-u first">
@@ -66,6 +66,16 @@
             <input type="radio" name="cleavage_relation" id="radio_relation_random" value="3" checked="checked">
             <label for="radio_relation_random">[%l('CLEAVAGE-RANDOM')%]</label>
         </div>
+    </div>
+
+    <div style="width:500px; margin-left:auto; margin-right: auto;" class="yui-g top-padded">
+        <input type="checkbox" name="remain_anonymous" id="remain_anonymous" value="1">
+        <label for="remain_anonymous">[%l('REMAIN_ANONYMOUS')%]</label>
+    </div>
+
+    <div style="width:500px; margin-left:auto; margin-right: auto;" class="yui-g top-padded">
+        <input type="checkbox" name="verified_permission" id="verified_permission" value="1">
+        <label for="verified_permission">[%l('VERIFY_UPLOAD_PERMISSION')%]</label>
     </div>
 
     <div style="width:300px; margin-left:auto; margin-right: auto;" class="yui-g top-padded">

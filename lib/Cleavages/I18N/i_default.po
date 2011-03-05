@@ -157,6 +157,9 @@ msgstr "Please specify some cleavage to upload"
 msgid "MISSING_PASSWORD"
 msgstr "Please provide your username"
 
+msgid "MISSING_UPLOAD_VERIFICATION"
+msgstr "You may only upload files after confirming that you have the right to do so"
+
 msgid "MISSING_USERNAME"
 msgstr "Please provide your password"
 
@@ -220,6 +223,9 @@ msgstr "Register"
 msgid "REGISTER NOW"
 msgstr "Register Now"
 
+msgid "REMAIN_ANONYMOUS"
+msgstr "Remain Anonymous (do not reveal to other users that you uploaded this file)"
+
 msgid "SELECT CLEAVAGE"
 msgstr "Select some cleavage to upload"
 
@@ -234,6 +240,9 @@ msgstr "Upload Cleavage"
 
 msgid "USERNAME"
 msgstr "Username"
+
+msgid "VERIFY_UPLOAD_PERMISSION"
+msgstr "I have permission to upload this, blah, blah, blah ..."
 
 msgid "You must be at least a %1 member to create new events"
 msgid "You must be at least a %1 member to create new events"

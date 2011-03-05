@@ -1,7 +1,6 @@
 log4perl.rootLogger                                             = DEBUG, BasicScreen, AppLogfile
 
 log4perl.appender.AppLogfile                                    = Log::Log4perl::Appender::File
-#log4perl.appender.AppLogfile.filename                           = /var/log/apache2/cleavages/cleavages.log
 log4perl.appender.AppLogfile.filename                           = /tmp/cleavages.log
 log4perl.appender.AppLogfile.mode                               = append
 log4perl.appender.AppLogfile.layout                             = PatternLayout
