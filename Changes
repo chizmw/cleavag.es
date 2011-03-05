@@ -1,5 +1,11 @@
 This file documents the revision history for Perl extension Cleavages.
 
+0.0.11  Thu Feb  5 22:39:59 GMT 2009
+    - fix "Link" button
+    - factor out "last rated" and add to index page
+    - add "login" area when user not logged in
+    - display and CSS tweaks
+
 0.0.10  Wed Jan 28 20:02:55 GMT 2009
     - aggregate controller tests
     - add more controller tests

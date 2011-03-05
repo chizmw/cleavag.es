@@ -57,7 +57,9 @@
     </div>
 
     <div class="yui-g top-padded">
-        <input type="submit" value="[%l('LOG IN')%]" class="align-center" />
+        <div class="align-center fake-buttons">
+            <input type="submit" value="[%l('LOG IN')%]" class="fake-button" />
+        </div>
     </div>
 </form>
 
@@ -192,6 +194,8 @@
     <!--stacked three-column grid (END)-->
 
     <div class="yui-g top-padded">
-        <input type="submit" value="[%l('CREATE ACCOUNT')%]" class="align-center" />
+        <div class="align-center fake-buttons">
+            <input type="submit" value="[%l('CREATE ACCOUNT')%]" class="fake-button" />
+        </div>
     </div>
 </form>

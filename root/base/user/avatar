@@ -3,4 +3,15 @@
 [% USE Gravatar %]
 <img src="[% Gravatar( email => c.user.email, rating => 'PG', default => c.uri_for("/static/images/mystery_head.jpg") ) | html %]" alt="[% c.user.first_name | html %]" width="80" height="80" />
 </div>
+[% ELSIF (!c.request.action.match('^/user/(signup|login)$')) %]
+<div id="user_signup">
+    <form action="[%c.uri_for('/user/login')%]" method="post" name="login_form" id="login_form">
+        <input type="text" name="username" id="username" />
+        <input type="password" name="password" id="password" />
+        <div class="align-center fake-buttons">
+            <input type="submit" value="[%l('LOG IN')%]" class="fake-button"/>
+            <a href="[%c.uri_for('/user/signup')%]" class="fake-button">[%l('REGISTER NOW')%]</a>
+        </div>
+    </form>
+</div>
 [% END %]

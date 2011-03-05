@@ -1,28 +1,6 @@
 <!--<h1>Rate Some Cleavage!</h1>-->
 
-[% IF (lFile = c.session.last_rated_file) %]
-<div class="last_rated_file">
-    <div class="last_rating_header">
-    [%l('LAST RATING')%]
-    </div>
-
-    [% IF lFile.thumbnail %]
-    [% c.image_tag("cleavage/${lFile.thumbnail}", {"alt" => "Cleavage", title => "Cleavage"}) %]
-    [% ELSE %]
-    [% c.image_tag("cleavage/${lFile.filepath}", {height=> 120, width=> 120, "alt" => "Cleavage", title => "Cleavage"}) %]
-    [% END %]
-    [% IF (summary = c.session.last_rated_file_summary) %]
-    <div class="last_file_current_rating">
-        [% FILTER format('%2.2f') %]
-        [% summary.current_rating %]
-        [% END %]
-    </div>
-    <div class="last_file_votes_made">
-        [% l('[quant,_1,RATING]', summary.votes_made) %]
-    </div>
-    [% END %]
-</div>
-[% END %]
+[% PROCESS cleavage/last_rated %]
 
 <div class="rate_cleavage">
     [% PROCESS cleavage/rate_control %]

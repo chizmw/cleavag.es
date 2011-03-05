@@ -4,7 +4,7 @@ use strict;
 use warnings;
 
 # derived from mst suggestion on #catalyst
-use version; our $VERSION = qv(0.0.10)->numify;
+use version; our $VERSION = qv(0.0.11)->numify;
 
 package Cleavages::Version;
 

@@ -3,7 +3,7 @@
 use inc::Module::Install;
 
 name        'Cleavages';
-version     '0.0.10';
+version     '0.0.11';
 all_from    'lib/Cleavages.pm';
 
 requires 'Catalyst::Runtime' => '5.7015';

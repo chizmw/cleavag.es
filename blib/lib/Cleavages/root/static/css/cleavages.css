@@ -70,12 +70,15 @@ div.fake-buttons {
     margin-bottom:          10px;
 }
 .fake-button {
+    background-color:       #000;
+    color:                  #fff;
     border-top:             1px solid #ccc;
     border-left:            1px solid #ccc;
     border-bottom:          1px solid #333;
     border-right:           1px solid #333;
     padding:                3px;
 }
+input:hover.fake-button,
 a:hover.fake-button  {
     text-decoration:        none;
     color:                  #000;
@@ -267,22 +270,53 @@ a#rb10:hover { background-color:        #ff0000; }
 }
 
 div#user_gravatar {
-    line-height:        1em;
-    font-size:          83%;
-    color:              #000;
-    background-color:   transparent;
-    position:           absolute;
-    top:                0px;
-    left:               0px;
-    height:             90px;
-    width:              200px;
-    padding-top:        3px;
-    text-align:         left;
-    border:             none;
-    z-index:            -1;
+    line-height:            1em;
+    font-size:              83%;
+    color:                  #000;
+    background-color:       transparent;
+    position:               absolute;
+    top:                    0px;
+    left:                   0px;
+    height:                 90px;
+    width:                  200px;
+    padding-top:            3px;
+    text-align:             left;
+    border:                 none;
+    z-index:                -1;
 }
 div#user_gravatar>img {
-    border:             1px solid #333;
+    border:                 1px solid #333;
+}
+
+div#user_signup {
+    line-height:            1em;
+    font-size:              83%;
+    color:                  #fff;
+    background-color:       transparent;
+    position:               absolute;
+    top:                    0px;
+    left:                   0px;
+    height:                 90px;
+    width:                  200px;
+    padding-top:            10px;
+    padding-left:           15px;
+    text-align:             left;
+    border:                 none;
+}
+div#user_signup input[type="text"],
+div#user_signup input[type="password"] {
+    background-color:       #ccc;
+    margin-top:             2px;
+    margin-bottom:          2px;
+    font-size:              83%;
+    width:                  75%;
+    margin-left:            auto;
+    margin-right:           auto;
+    display:block;
+}
+
+div#user_signup .fake-buttons {
+    font-size:              93%;
 }
 
 #validation_errors {

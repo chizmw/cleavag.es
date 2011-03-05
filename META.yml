@@ -50,4 +50,4 @@ requires:
   Template::Plugin::Gravatar: 0
   parent: 0
   version: 0
-version: 0.0.10
+version: 0.0.11
