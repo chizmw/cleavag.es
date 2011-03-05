@@ -1,0 +1,5 @@
+        [% PROCESS google/adsense %]
+        [% PROCESS google/analytics %]
+    </body>
+</html>
+

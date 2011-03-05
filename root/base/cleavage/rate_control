@@ -1,0 +1,18 @@
+<form method="post" action="[%c.uri_for('/cleavage/rate', file.md5_hex)%]">
+    <input type="hidden" name="file_md5" value="[%file.md5_hex%]" />
+    <div class="rate_control">
+        <table>
+            <tr>
+                [% SET values = [1,2,3,4,5,6,7,8,9,10] %]
+                [% FOR i IN values %]
+                <td>
+                    <input type="radio" size="2" name="cleavage_rating" id="rated_[%i%]" value="[%i%]" onClick="this.form.submit();">
+                    <a class="vote-link" name="v[%i%]" id="rb[%i%]">
+                    <label for="rated_[%i%]">[%i%]</label>
+                    </a>
+                </td>
+                [% END %]
+            </tr>
+        </table>
+    </div>
+</form>

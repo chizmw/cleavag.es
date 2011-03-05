@@ -1,0 +1,20 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang=en>
+    <head>
+        <title>Cleavages</title>
+        <meta name="author" content="Chisel Wright">
+
+        <link rel="stylesheet" type="text/css" href="[%c.uri_for('/static/yui/reset-fonts-grids/reset-fonts-grids.css')%]"> 
+        <link rel="stylesheet" type="text/css" href="[%c.uri_for('/static/css/cleavages.css')%]" media="screen">
+    </head>
+
+    <body>
+
+        [% IF c.user && c.user.email %]
+        <div id="user_gravatar">
+        [% USE Gravatar %]
+        <img src="[% Gravatar( email => c.user.email, rating => 'PG', default => c.uri_for("/static/images/mystery_head.jpg") ) | html %]" alt="[% c.user.first_name | html %]" width="80" height="80" />
+        </div>
+        [% END %]
+
+        [% PROCESS dfv/display_validation_messages %]

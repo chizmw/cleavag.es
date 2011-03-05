@@ -1,0 +1,10 @@
+blib
+root/static/cleavage
+root/static/yui-assets
+.*\.swp
+Makefile$
+Cleavages*gz
+.*\.gz
+Makefile.old
+MANIFEST.bak
+note.txt

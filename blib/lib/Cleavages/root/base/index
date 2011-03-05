@@ -1,0 +1,15 @@
+[% IF (file = top_rated) %]
+<div class="rate_cleavage">
+    [% c.image_tag("cleavage/${file.filepath}", {"alt" => "Cleavage", title => "Cleavage"}) %]
+    <div class="align-center top-padded fake-buttons">
+        <a class="fake-button" href="[%c.uri_for('/cleavage/random')%]">Rate Some Cleavage</a>
+    </div>
+</div>
+[% ELSE %]
+<div style="height:150px"></div>
+<div class="align-center">
+    <a href="[%c.uri_for('/cleavage/random')%]">Take Me To The Cleavage</a>
+</div>
+<div style="height:150px"></div>
+[% END %]
+

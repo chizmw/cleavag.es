@@ -1,0 +1,49 @@
+<h1>Rate Some Cleavage!</h1>
+
+[% IF (lFile = c.session.last_rated_file) %]
+<div class="last_rated_file">
+    <div class="last_rating_header">
+    Last Rating
+    </div>
+
+    [% c.image_tag("cleavage/${lFile.filepath}", {height=> 100, width=> 100, "alt" => "Cleavage", title => "Cleavage"}) %]
+    [% IF (summary = c.session.last_rated_file_summary) %]
+    <div class="last_file_current_rating">
+        [% FILTER format('%2.2f') %]
+        [% summary.current_rating %]
+        [% END %]
+    </div>
+    <div class="last_file_votes_made">
+        [% summary.votes_made %] ratings
+    </div>
+    [% END %]
+</div>
+[% END %]
+
+<div class="rate_cleavage">
+    [% PROCESS cleavage/rate_control %]
+
+    [% c.image_tag("cleavage/${file.filepath}", {"alt" => "Cleavage", title => "Cleavage"}) %]
+    <div class="align-center top-padded fake-buttons">
+        <a class="fake-button" href="[%c.uri_for('/cleavage/random')%]">Gimme Random Cleavage</a>
+        <a class="fake-button" href="[%c.uri_for('/cleavage/upload')%]">Upload Cleavage</a>
+        <a class="fake-button" href="javascript:void(0);" onClick="return showLink();">Link</a>
+    </div>
+
+    <form>
+        <input type="text" id="rate_permalink" onFocus="this.select();" value="[%c.uri_for('/cleavage/rate', file.md5_hex)%]">
+    </form>
+</div>
+
+<script class="script/javascript">
+    function showLink() {
+        var currentStyle = document.getElementById('rate_permalink').style;
+        if (currentStyle.display != 'inline') {
+            currentStyle.display = 'inline';
+        } else {
+            currentStyle.display = 'none';
+        }
+        console.log(currentStyle);
+        return true;
+    }
+</script>
