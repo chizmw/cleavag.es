@@ -1,5 +1,9 @@
 This file documents the revision history for Perl extension Cleavages.
 
+0.0.12  Fri Feb  6 22:40:49 GMT 2009
+    - added attribution_url to file table
+    - added functionality to show link-button for images with an attribution
+
 0.0.11  Thu Feb  5 22:39:59 GMT 2009
     - fix "Link" button
     - factor out "last rated" and add to index page

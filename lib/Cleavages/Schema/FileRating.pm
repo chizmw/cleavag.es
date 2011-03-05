@@ -39,8 +39,8 @@ __PACKAGE__->add_unique_constraint("file_rating_pkey", ["id"]);
 __PACKAGE__->belongs_to("file_id", "Cleavages::Schema::File", { id => "file_id" });
 
 
-# Created by DBIx::Class::Schema::Loader v0.04005 @ 2009-01-19 08:59:07
-# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:SseAzDaW6GQ5CUsyiqDGeA
+# Created by DBIx::Class::Schema::Loader v0.04005 @ 2009-02-06 22:22:39
+# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:yvSLB39ChWxos7yflRUFtA
 
 
 # You can replace this text with custom content, and it will be preserved on regeneration

@@ -72,6 +72,9 @@ __PACKAGE__->log(
 # a helper to localise text
 sub i18nise {
     my ($c, $msgid, $msgargs) = @_;
+$c->log->info( join '', @{ $c->languages } );
+$c->log->info( $c->localize("DummyString") );
+
 
     return $c->localize(
         $msgid,

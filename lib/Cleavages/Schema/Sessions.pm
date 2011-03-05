@@ -36,8 +36,8 @@ __PACKAGE__->set_primary_key("id");
 __PACKAGE__->add_unique_constraint("sessions_pkey", ["id"]);
 
 
-# Created by DBIx::Class::Schema::Loader v0.04005 @ 2009-01-19 08:59:07
-# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:EkIYMELHGA2weEU4nvdEMQ
+# Created by DBIx::Class::Schema::Loader v0.04005 @ 2009-02-06 22:22:39
+# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:CzG+mLhjHhB7/HGDROKueQ
 
 
 # You can replace this text with custom content, and it will be preserved on regeneration

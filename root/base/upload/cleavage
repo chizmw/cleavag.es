@@ -69,6 +69,11 @@
     </div>
 
     <div style="width:500px; margin-left:auto; margin-right: auto;" class="yui-g top-padded">
+        <label for="attribution_url">[%l('ATTRIBUTION_URL')%]</label>
+        <input type="text" value="http://" name="attribution_url" id="attribution_url" size="30" onFocus="this.select()"/>
+    </div>
+
+    <div style="width:500px; margin-left:auto; margin-right: auto;" class="yui-g top-padded">
         <input type="checkbox" name="remain_anonymous" id="remain_anonymous" value="1" />
         <label for="remain_anonymous">[%l('REMAIN_ANONYMOUS')%]</label>
     </div>

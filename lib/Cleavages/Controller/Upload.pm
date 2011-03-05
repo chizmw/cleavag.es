@@ -23,6 +23,7 @@ my %dfv_profile_for = (
 
         optional => [qw<
             remain_anonymous
+            attribution_url
         >],
 
         filters => 'trim',
@@ -238,6 +239,8 @@ sub _txn_add_file : Private {
 
             remain_anonymous    => ($results->valid('remain_anonymous')     || 0),
             verified_permission => ($results->valid('verified_permission')  || 0),
+
+            attribution_url     => ($results->valid('attribution_url')      || undef),
         },
     );
 

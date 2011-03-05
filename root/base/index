@@ -2,6 +2,12 @@
 
 [% IF (file = top_rated) %]
 <div class="rate_cleavage">
+    [% IF file.attribution_url %]
+    <a href="[%file.attribution_url%]" target="attribution_info">
+    [% c.image_tag("some_rights_reserved.gif", {alt=>"Some Rights Reserved", title=>"Some Rights Reserved"}) %]
+    </a>
+    [% END %]
+
     [% c.image_tag("cleavage/${file.filepath}", {"alt" => "Cleavage", title => "Cleavage"}) %]
     <div class="align-center top-padded fake-buttons">
         <a class="fake-button" href="[%c.uri_for('/cleavage/random')%]">Rate Some Cleavage</a>
