@@ -35,7 +35,12 @@ my %dfv_profile_for = (
     },
 );
 
-sub index :Chained('base') Path Args(0) {
+sub base : Chained('/language') PathPart('cleavage') CaptureArgs(0) { 
+    my ($self, $c) = @_;
+    return;
+}
+
+sub index :Chained('base') PathPart('') Args(0) {
     my ( $self, $c ) = @_;
     $c->detach('random_cleavage');
 }
@@ -63,11 +68,6 @@ sub cleavage_file : Regex('^cleavage/show/([-_\./0-9a-zA-z]+)$') {
         )
     );
 
-    return;
-}
-
-sub base : Chained('/language') PathPart('cleavage') CaptureArgs(0) { 
-    my ($self, $c) = @_;
     return;
 }
 
@@ -196,12 +196,14 @@ sub rate_cleavage : Chained('base') PathPart('rate') Args(1) {
 sub top_cleavage : Chained('base') PathPart('top') Args(0) {
     my ($self,$c) = @_;
     $c->stash->{top_rated} = $c->model('Cleavages::File')->top_rated();
+    # if we don't have a template ... show "main page"
+    $c->stash->{template} ||= 'index';
     return;
 }
 
 sub upload : Chained('base') PathPart('upload') Args(0) {
     my ($self,$c) = @_;
-    $c->forward(
+    $c->detach(
         '/upload/cleavage',
     );
     return;

@@ -1,0 +1,8 @@
+<h1 class="align-center">[%l('PAGE_NOT_FOUND')%]</h1>
+
+<p class="align-center">
+The requested page - <strong>[% c.request.uri %]</strong> - is not
+available.
+</p>
+
+[% PROCESS index %]

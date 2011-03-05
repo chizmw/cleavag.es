@@ -4,6 +4,8 @@ use strict;
 use warnings;
 use parent 'Catalyst::Controller';
 
+use base 'Catalyst::Controller::Validation::DFV';
+
 #
 # Sets the actions in this controller to be registered with no prefix
 # so they function identically to actions created in MyApp.pm
@@ -26,7 +28,13 @@ Cleavages::Controller::Root - Root Controller for Cleavages
 
 =cut
 
-sub index :Path :Args(0) {
+# all controller chain bases should hang off of here
+sub language : Chained('/') PathPart('') CaptureArgs(0) {
+    my ($self, $c, $language) = @_;
+    $c->stash(language => 'en');
+}
+
+sub index : Chained('language') PathPart('') :Args(0) {
     my ( $self, $c ) = @_;
 
     $c->forward('/cleavage/top_cleavage');
@@ -42,14 +50,11 @@ sub app_root : Chained PathPart('') Args(0) {
 
 sub default :Path {
     my ( $self, $c ) = @_;
-    $c->response->body( 'Page not found' );
+    #$c->response->body( 'Page not found' );
     $c->response->status(404);
     
-}
-
-sub language : Chained PathPart('') CaptureArgs(0) {
-    my ($self, $c, $language) = @_;
-    $c->stash(language => 'en');
+    # TODO error template
+    $c->stash->{template} = 'error/404';
 }
 
 sub render : ActionClass('RenderView') {
@@ -70,16 +75,11 @@ sub render : ActionClass('RenderView') {
 sub end : Private {
     my ($self, $c) = @_;
 
+    # render the page
     $c->forward('render');
 
     # fill in any forms
-    $c->fillform(
-        {
-            # combine two hashrefs so we only make one method call
-            %{ $c->request->parameters || {} },
-            %{ $c->stash->{formdata}   || {} },
-        }
-    );
+    $c->forward('refill_form'); # from Catalyst::Controller::Validation::DFV
 }
 
 

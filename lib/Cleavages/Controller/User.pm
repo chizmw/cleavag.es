@@ -46,14 +46,14 @@ my %dfv_profile_for = (
     },
 );
 
+sub base : Chained('/language') PathPart('user') CaptureArgs(0) { 
+    # do nothing for now
+}
 
-sub index :Path :Args(0) {
+sub index :Chained('base') PathPart('') Args(0) {
     my ( $self, $c ) = @_;
 
     $c->response->body('Matched Cleavages::Controller::User in User.');
-}
-
-sub base : Chained('/language') PathPart('user') CaptureArgs(0) { 
 }
 
 sub login : Chained('base') PathPart('login') Args(0) {
@@ -104,10 +104,16 @@ sub login : Chained('base') PathPart('login') Args(0) {
                 # otherwise just show the default page
                 $c->detach('/app_root');
             }
+            else {
+                # let them know they couldn't get their details right
+                $c->forward(
+                    'add_form_invalid',
+                    [ 'login_credentials', 'no-matching-users' ]
+                );
+            }
         }
     }
 
-    #$c->forward('signup');
     $c->stash->{template} = q{user/signup};
 
     return;
@@ -116,30 +122,55 @@ sub login : Chained('base') PathPart('login') Args(0) {
 sub logout : Chained('base') PathPart('logout') Args(0) {
     my ($self, $c) = @_;
 
-    # session logout, and remove information we've stashed
-    $c->logout;
-    #delete $c->session->{'authed_user'};
-    #$c->set_authed_user( undef );
+    # only logout if we have a user
+    if ($c->user) {
+        # session logout, and remove information we've stashed
+        $c->logout;
 
-    # redisplay the page we were on, or just do the 'default' action
-    my $base    = $c->request->base();
-    my $action  = $c->action();
+        # redisplay the page we were on, or just do the 'default' action
+        my $base    = $c->request->base();
+        my $action  = $c->action();
 
-    # redirect to where we were referred from, unless our referer is our action
-    if ( $c->request->referer() =~ m{\A$base}xms and $c->request->referer() !~ m{$action\z}xms) {
-        $c->response->redirect( $c->request->referer() );
-        return;
+        # redirect to where we were referred from, unless our referer is our action
+        if ( $c->request->referer() =~ m{\A$base}xms and $c->request->referer() !~ m{$action\z}xms) {
+            $c->response->redirect( $c->request->referer() );
+            return;
+        }
     }
-    else {
-        #$c->response->redirect( $c->uri_for($c->config()->{default_uri}) );
-        $c->detach('/app_root');
-    }
+
+    # bounce on to the application's default page
+    $c->detach('/app_root');
+    return;
+}
+
+# /user/profile/*
+sub user_profile : Chained('base') PathPart('profile') Args(1) {
+    my ($self, $c) = @_;
+}
+
+# XXX work out how NOT to use the PK id to refer to users
+# /user/profile/*/...
+sub profile : Chained('base') PathPart('profile') CaptureArgs(1) {
+    my ($self, $c, $user_identifier) = @_;
+
+    $c->stash->{user_profile} = $c->model('Cleavages::Person')->find(
+        {
+            id => $user_identifier,
+        },
+        {
+            key => 'primary',
+        }
+    );
 
     return;
 }
 
+# /user/profile/*/edit
+sub user_profile_edit : Chained('profile') PathPart('edit') Args(0) {
+    my ($self, $c) = @_;
+}
 
-sub signup : Local {
+sub signup : Chained('base') PathPart('signup') Args(0) {
     my ($self, $c) = @_;
     
     # deal with form submissions

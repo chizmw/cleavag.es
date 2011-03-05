@@ -11,16 +11,16 @@
 
     <div style="width:300px; margin-left:auto; margin-right: auto;" class="yui-g">
         <div class="yui-u first">
-            <label for="radio_gender_female"><img src="[%c.uri_for('/static/images/mystery_head.jpg')%]" alt="[%l('FEMALE')%]" width="80" height="80" /></label>
+            <label for="radio_gender_female"><img src="[%c.uri_for('/static/images/icon_80_female.gif')%]" alt="[%l('FEMALE')%]" width="80" height="80" /></label>
             <br />
-            <input type="radio" name="gender" id="radio_gender_female" value="Female" checked="checked">
+            <input type="radio" name="gender" id="radio_gender_female" value="Female" checked="checked" />
             <label for="radio_gender_female">[%l('FEMALE')%]</label>
         </div>
 
         <div class="yui-u">
-            <label for="radio_gender_male"><img src="[%c.uri_for('/static/images/mystery_head.jpg')%]" alt="[%l('MALE')%]" width="80" height="80" /></label>
+            <label for="radio_gender_male"><img src="[%c.uri_for('/static/images/icon_80_male.gif')%]" alt="[%l('MALE')%]" width="80" height="80" /></label>
             <br />
-            <input type="radio" name="gender" id="radio_gender_male" value="Male">
+            <input type="radio" name="gender" id="radio_gender_male" value="Male" />
             <label for="radio_gender_male">[%l('MALE')%]</label>
         </div>
     </div>
@@ -29,16 +29,16 @@
 
     <div style="width:300px; margin-left:auto; margin-right: auto;" class="yui-g">
         <div class="yui-u first">
-            <label for="radio_cleavage_top"><img src="[%c.uri_for('/static/images/mystery_head.jpg')%]" alt="[%l('TOP-CLEAVAGE')%]" width="80" height="80" /></label>
+            <label for="radio_cleavage_top"><img src="[%c.uri_for('/static/images/icon_80_topclv.gif')%]" alt="[%l('TOP-CLEAVAGE')%]" width="80" height="80" /></label>
             <br />
-            <input type="radio" name="cleavage_type" id="radio_cleavage_top" value="Top" checked="checked">
+            <input type="radio" name="cleavage_type" id="radio_cleavage_top" value="Top" checked="checked" />
             <label for="radio_cleavage_top">[%l('TOP-CLEAVAGE')%]</label>
         </div>
 
         <div class="yui-u">
-            <label for="radio_cleavage_bottom"><img src="[%c.uri_for('/static/images/mystery_head.jpg')%]" alt="[%l('BOTTOM-CLEAVAGE')%]" width="80" height="80" /></label>
+            <label for="radio_cleavage_bottom"><img src="[%c.uri_for('/static/images/icon_80_botclv.gif')%]" alt="[%l('BOTTOM-CLEAVAGE')%]" width="80" height="80" /></label>
             <br />
-            <input type="radio" name="cleavage_type" id="radio_cleavage_bottom" value="Bottom">
+            <input type="radio" name="cleavage_type" id="radio_cleavage_bottom" value="Bottom" />
             <label for="radio_cleavage_bottom">[%l('BOTTOM-CLEAVAGE')%]</label>
         </div>
     </div>
@@ -47,39 +47,39 @@
 
     <div style="width:400px; margin-left:auto; margin-right: auto;" class="yui-gb">
         <div class="yui-u first">
-            <label for="radio_relation_mine"><img src="[%c.uri_for('/static/images/mystery_head.jpg')%]" alt="[%l('TOP-CLEAVAGE')%]" width="80" height="80" /></label>
+            <label for="radio_relation_mine"><img src="[%c.uri_for('/static/images/icon_80_mine.gif')%]" alt="[%l('TOP-CLEAVAGE')%]" width="80" height="80" /></label>
             <br />
-            <input type="radio" name="cleavage_relation" id="radio_relation_mine" value="1">
+            <input type="radio" name="cleavage_relation" id="radio_relation_mine" value="1" />
             <label for="radio_relation_mine">[%l('CLEAVAGE-MINE')%]</label>
         </div>
 
         <div class="yui-u">
-            <label for="radio_relation_known"><img src="[%c.uri_for('/static/images/mystery_head.jpg')%]" alt="[%l('BOTTOM-CLEAVAGE')%]" width="80" height="80" /></label>
+            <label for="radio_relation_known"><img src="[%c.uri_for('/static/images/icon_80_known.gif')%]" alt="[%l('BOTTOM-CLEAVAGE')%]" width="80" height="80" /></label>
             <br />
-            <input type="radio" name="cleavage_relation" id="radio_relation_known" value="2">
+            <input type="radio" name="cleavage_relation" id="radio_relation_known" value="2" />
             <label for="radio_relation_known">[%l('CLEAVAGE-KNOWN')%]</label>
         </div>
 
         <div class="yui-u">
-            <label for="radio_relation_random"><img src="[%c.uri_for('/static/images/mystery_head.jpg')%]" alt="[%l('BOTTOM-CLEAVAGE')%]" width="80" height="80" /></label>
+            <label for="radio_relation_random"><img src="[%c.uri_for('/static/images/icon_80_relunkn.gif')%]" alt="[%l('BOTTOM-CLEAVAGE')%]" width="80" height="80" /></label>
             <br />
-            <input type="radio" name="cleavage_relation" id="radio_relation_random" value="3" checked="checked">
+            <input type="radio" name="cleavage_relation" id="radio_relation_random" value="3" checked="checked" />
             <label for="radio_relation_random">[%l('CLEAVAGE-RANDOM')%]</label>
         </div>
     </div>
 
     <div style="width:500px; margin-left:auto; margin-right: auto;" class="yui-g top-padded">
-        <input type="checkbox" name="remain_anonymous" id="remain_anonymous" value="1">
+        <input type="checkbox" name="remain_anonymous" id="remain_anonymous" value="1" />
         <label for="remain_anonymous">[%l('REMAIN_ANONYMOUS')%]</label>
     </div>
 
     <div style="width:500px; margin-left:auto; margin-right: auto;" class="yui-g top-padded">
-        <input type="checkbox" name="verified_permission" id="verified_permission" value="1">
+        <input type="checkbox" name="verified_permission" id="verified_permission" value="1" />
         <label for="verified_permission">[%l('VERIFY_UPLOAD_PERMISSION')%]</label>
     </div>
 
     <div style="width:300px; margin-left:auto; margin-right: auto;" class="yui-g top-padded">
-        <input type="submit" value="[%l('UPLOAD_CLEAVAGE')%]""/>
+        <input type="submit" value="[%l('UPLOAD_CLEAVAGE')%]" />
     </div>
 </form>
 

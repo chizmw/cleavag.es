@@ -2,13 +2,13 @@
 <html lang=en>
     <head>
         <title>Cleavages</title>
-        <meta name="author"     content="iLook">
-        <meta name="contact"    content="i.look@cleavag.es">
-        <meta name="appname"    content="[%c.config.name%]">
-        <meta name="appver"     content="[%c.config.version%]">
+        <meta name="author"     content="iLook" />
+        <meta name="contact"    content="i.look@cleavag.es" />
+        <meta name="appname"    content="[%c.config.name%]" />
+        <meta name="appver"     content="[%c.config.version%]" />
 
-        <link rel="stylesheet" type="text/css" href="[%c.uri_for('/static/yui/reset-fonts-grids/reset-fonts-grids.css')%]"> 
-        <link rel="stylesheet" type="text/css" href="[%c.uri_for('/static/css/cleavages.css')%]" media="screen">
+        <link rel="stylesheet" type="text/css" href="[%c.uri_for('/static/yui/reset-fonts-grids/reset-fonts-grids.css')%]" /> 
+        <link rel="stylesheet" type="text/css" href="[%c.uri_for('/static/css/cleavages.css')%]" media="screen" />
     </head>
 
     <body>

@@ -133,6 +133,9 @@ msgstr "Link"
 msgid "LOG IN"
 msgstr "Log-In"
 
+msgid "LOGIN_CREDENTIALS"
+msgstr "Login"
+
 msgid "LOGIN TO UPLOAD"
 msgstr "You must be logged in to upload new images. If you are an existing user, sign in using the form below. New users can register using the form at the bottom of the page."
 
@@ -155,13 +158,13 @@ msgid "MISSING CLEAVAGE FILE"
 msgstr "Please specify some cleavage to upload"
 
 msgid "MISSING_PASSWORD"
-msgstr "Please provide your username"
+msgstr "Please provide your password"
 
 msgid "MISSING_UPLOAD_VERIFICATION"
 msgstr "You may only upload files after confirming that you have the right to do so"
 
 msgid "MISSING_USERNAME"
-msgstr "Please provide your password"
+msgstr "Please provide your username"
 
 msgid "MORE THAN %1 MONTHS IN ADVANCE"
 msgstr "More than %1 months in advance"
@@ -190,8 +193,14 @@ msgstr "Street"
 msgid "NEW LOCATION TOWN"
 msgstr "Town"
 
+msgid "NO_MATCHING_USERS"
+msgstr "There are no no users matching the information provided"
+
 msgid "OR"
 msgstr "or"
+
+msgid "PAGE_NOT_FOUND"
+msgstr "Page Not Found"
 
 msgid "PARTICIPATE IN AN EVENT"
 msgstr "Participate in an Event"
@@ -242,10 +251,10 @@ msgid "USERNAME"
 msgstr "Username"
 
 msgid "VERIFY_UPLOAD_PERMISSION"
-msgstr "I have permission to upload this, blah, blah, blah ..."
+msgstr "I certify that I have the right to distribute these photos"
 
 msgid "You must be at least a %1 member to create new events"
-msgid "You must be at least a %1 member to create new events"
+msgstr "You must be at least a %1 member to create new events"
 
 # phrases from validation messages "missing"
 msgid "Missing form field: %1"

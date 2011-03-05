@@ -2,6 +2,11 @@
 abstract: 'Catalyst based application'
 author:
   - 'Chisel Wright,,,'
+build_requires:
+  File::MimeInfo::Magic: 0
+  Test::Aggregate: 0
+  Test::DBIx::Class::Schema: 0
+  Test::More: 0
 distribution_type: module
 generated_by: 'Module::Install version 0.75'
 license: perl
@@ -16,7 +21,7 @@ no_index:
 requires:
   Catalyst::Action::RenderView: 0
   Catalyst::Authentication::Store::DBIx::Class: 0
-  Catalyst::Controller::Validation::DFV: 0
+  Catalyst::Controller::Validation::DFV: 0.0.2
   Catalyst::Controller::reCAPTCHA: 0
   Catalyst::Log::Log4perl: 0
   Catalyst::Model::DBIC::Schema: 0
@@ -45,4 +50,4 @@ requires:
   Template::Plugin::Gravatar: 0
   parent: 0
   version: 0
-version: 0.0.9
+version: 0.0.10

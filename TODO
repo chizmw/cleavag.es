@@ -5,3 +5,4 @@ D   - Upload::Image::Magick::Thumbnail::Fixed; can we generate thumbnails at upl
       (instead of browser-scaling the full-size image)
 D   - don't vote same image two-in-a-row
 D   - add "rate the image" to rate-control
+D   - "Permission TO Upload" message

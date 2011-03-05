@@ -1,5 +1,14 @@
 This file documents the revision history for Perl extension Cleavages.
 
+0.0.10  Wed Jan 28 20:02:55 GMT 2009
+    - aggregate controller tests
+    - add more controller tests
+    - add aggregated schema tests
+    - move actions to Chained dispatcher
+    - replace temporary filler-icons on upload page
+    - HTML markup cleanup
+    - add nicer 404 response
+
 0.0.9   Mon Jan 19 19:01:37 GMT 2009
     - added "anonymous" and "yes, I'm allowed to upload this"
     - add test to check for mime-type issue

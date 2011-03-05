@@ -29,19 +29,18 @@ my %dfv_profile_for = (
     },
 );
 
-sub base : Chained('/language') PathPart('user') CaptureArgs(0) { 
+sub base : Chained('/language') PathPart('upload') CaptureArgs(0) { 
     my ($self, $c) = @_;
     return;
 }
 
-
-sub index :Path :Args(0) {
+sub index : Chained('base') PathPart('') Args(0) {
     my ( $self, $c ) = @_;
     $c->response->body('Matched Cleavages::Controller::Upload in Upload.');
     return;
 }
 
-sub cleavage : Local {
+sub cleavage : Chained('base') PathPart('cleavage') Args(0) {
     my ( $self, $c ) = @_;
 
     # as we can be the 'victim' of a forward() we specify the template

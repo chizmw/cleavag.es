@@ -1,7 +1,7 @@
 log4perl.rootLogger                                             = DEBUG, BasicScreen, AppLogfile
 
 log4perl.appender.AppLogfile                                    = Log::Log4perl::Appender::File
-log4perl.appender.AppLogfile.filename                           = cleavages.log
+log4perl.appender.AppLogfile.filename                           = /tmp/cleavages.log
 log4perl.appender.AppLogfile.mode                               = append
 log4perl.appender.AppLogfile.layout                             = PatternLayout
 log4perl.appender.AppLogfile.layout.ConversionPattern           = [%d] %6p: <%c> %M - %m%n

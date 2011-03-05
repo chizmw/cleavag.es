@@ -39,7 +39,7 @@
     </form>
 </div>
 
-<script class="script/javascript">
+<script type="text/javascript">
     function showLink() {
         var currentStyle = document.getElementById('rate_permalink').style;
         if (currentStyle.display != 'inline') {
