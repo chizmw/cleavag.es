@@ -1,3 +1,0 @@
-[% MACRO l(text, args) BLOCK;
-    c.i18nise (text, args);
-END; %]
