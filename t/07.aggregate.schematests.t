@@ -14,7 +14,6 @@ BEGIN {
 # load the module that provides all of the common test functionality
 BEGIN {
     use lib "$Bin/../$other_test_dir";
-    use SchemaTest;
 }
 
 
