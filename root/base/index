@@ -4,7 +4,7 @@
 <div class="rate_cleavage">
     [% IF file.attribution_url %]
     <a href="[%file.attribution_url%]" target="attribution_info">
-    [% c.image_tag("some_rights_reserved.gif", {alt=>"[%l('messages.some.rights.reserved')%]", title=>"Some Rights Reserved"}) %]
+    [% c.image_tag("some_rights_reserved.gif", {alt=>l('messages.some.rights.reserved'), title=>"Some Rights Reserved"}) %]
     </a>
     [% END %]
 
