@@ -1,8 +1,8 @@
-<h1 class="align-center">[%l('PAGE_NOT_FOUND')%]</h1>
+<h1 class="align-center">[%l('messages.page.not.found')%]</h1>
 
 <p class="align-center">
-The requested page - <strong>[% c.request.uri %]</strong> - is not
-available.
+[%l('messages.requested.page.missing')%]:
+ <strong>[% c.request.uri %]</strong>
 </p>
 
 [% PROCESS index %]

@@ -10,8 +10,14 @@ msgstr "Cleavage"
 msgid "messages.hello.catalyst"
 msgstr "Hello Catalyst - fallback translation"
 
+msgid "messages.page.not.found"
+msgstr "Page Not Found"
+
 msgid "message.rate.some.cleavage"
 msgstr "Rate Some Cleavage"
+
+msgid "messages.requested.page.missing"
+msgstr "The requested page is not available"
 
 msgid "messages.take.me.to.the.cleavage"
 msgstr "Take Me To The Cleavage"
