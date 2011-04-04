@@ -14,10 +14,9 @@ sub language : Chained('/') PathPart('') CaptureArgs(0) {
     $c->stash(language => 'en');
 }
 
-sub index : Chained('language') PathPart('') :Args(0) {
+sub index :Chained('language') :Path :Args(0) {
     my ( $self, $c ) = @_;
     $c->forward('/cleavage/top_cleavage');
-    return;
 }
 
 =head2 default
