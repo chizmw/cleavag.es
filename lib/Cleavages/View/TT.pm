@@ -1,9 +1,14 @@
 package Cleavages::View::TT;
 
 use strict;
+use warnings;
+
 use base 'Catalyst::View::TT';
 
-__PACKAGE__->config(TEMPLATE_EXTENSION => '.tt');
+__PACKAGE__->config(
+    TEMPLATE_EXTENSION => '.tt',
+    render_die => 1,
+);
 
 =head1 NAME
 
@@ -11,19 +16,19 @@ Cleavages::View::TT - TT View for Cleavages
 
 =head1 DESCRIPTION
 
-TT View for Cleavages. 
-
-=head1 AUTHOR
+TT View for Cleavages.
 
 =head1 SEE ALSO
 
 L<Cleavages>
 
-Chisel Wright,,,
+=head1 AUTHOR
+
+Chisel,,,
 
 =head1 LICENSE
 
-This library is free software, you can redistribute it and/or modify
+This library is free software. You can redistribute it and/or modify
 it under the same terms as Perl itself.
 
 =cut
