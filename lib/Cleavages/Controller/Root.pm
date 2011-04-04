@@ -4,33 +4,20 @@ use namespace::autoclean;
 
 BEGIN { extends 'Catalyst::Controller' }
 
-#
 # Sets the actions in this controller to be registered with no prefix
 # so they function identically to actions created in MyApp.pm
-#
 __PACKAGE__->config(namespace => '');
 
-=head1 NAME
+# all controller chain bases should hang off of here
+sub language : Chained('/') PathPart('') CaptureArgs(0) {
+    my ($self, $c, $language) = @_;
+    $c->stash(language => 'en');
+}
 
-Cleavages::Controller::Root - Root Controller for Cleavages
-
-=head1 DESCRIPTION
-
-[enter your description here]
-
-=head1 METHODS
-
-=head2 index
-
-The root page (/)
-
-=cut
-
-sub index :Path :Args(0) {
+sub index : Chained('language') PathPart('') :Args(0) {
     my ( $self, $c ) = @_;
-
-    # Hello World
-    $c->response->body( $c->welcome_message );
+    $c->forward('/cleavage/top_cleavage');
+    return;
 }
 
 =head2 default
@@ -41,8 +28,9 @@ Standard 404 error page
 
 sub default :Path {
     my ( $self, $c ) = @_;
-    $c->response->body( 'Page not found' );
     $c->response->status(404);
+    # TODO error template
+    $c->stash->{template} = 'error/404';
 }
 
 =head2 end
