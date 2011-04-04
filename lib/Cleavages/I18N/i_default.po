@@ -4,6 +4,9 @@ msgstr "Log-In"
 msgid "button.register.now"
 msgstr "Register Now"
 
+msgid "messages.cleavage"
+msgstr "Cleavage"
+
 msgid "messages.hello.catalyst"
 msgstr "Hello Catalyst - fallback translation"
 

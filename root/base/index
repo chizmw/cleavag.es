@@ -4,11 +4,11 @@
 <div class="rate_cleavage">
     [% IF file.attribution_url %]
     <a href="[%file.attribution_url%]" target="attribution_info">
-    [% c.image_tag("some_rights_reserved.gif", {alt=>l('messages.some.rights.reserved'), title=>"Some Rights Reserved"}) %]
+    [% c.image_tag("some_rights_reserved.gif", {alt=>l('messages.some.rights.reserved'), title=>l('messages.some.rights.reserved')}) %]
     </a>
     [% END %]
 
-    [% c.image_tag("cleavage/${file.filepath}", {"alt" => "Cleavage", title => "Cleavage"}) %]
+    [% c.image_tag("cleavage/${file.filepath}", {"alt" => l('messages.cleavage'), title => l('messages.cleavage')}) %]
     <div class="align-center top-padded fake-buttons">
         <a class="fake-button" href="[%c.uri_for('/cleavage/random')%]">[%l('messages.rate.some.cleavage')%]</a>
     </div>
