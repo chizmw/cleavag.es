@@ -20,6 +20,7 @@ use Catalyst qw/
     -Debug
     ConfigLoader
     Static::Simple
+    I18N
 /;
 
 extends 'Catalyst';
@@ -43,6 +44,14 @@ __PACKAGE__->config(
 
 # Start the application
 __PACKAGE__->setup();
+
+sub i18nise {
+    my ($c, $msgid, $msgargs) = @_;
+    return $c->localize(
+        $msgid,
+        $msgargs
+    );
+}
 
 
 =head1 NAME
