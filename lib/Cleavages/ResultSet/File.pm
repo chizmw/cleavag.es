@@ -3,8 +3,6 @@ package Cleavages::ResultSet::File;
 use strict;
 use warnings;
 
-use Cleavages::Version;  our $VERSION = $Cleavages::VERSION;
-
 use base 'DBIx::Class::ResultSet';
 
 sub add_rating {
