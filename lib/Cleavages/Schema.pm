@@ -1,16 +1,19 @@
 package Cleavages::Schema;
 
-use strict;
-use warnings;
+# Created by DBIx::Class::Schema::Loader
+# DO NOT MODIFY THE FIRST PART OF THIS FILE
 
-use base 'DBIx::Class::Schema';
+use Moose;
+use namespace::autoclean;
+extends 'DBIx::Class::Schema';
 
-__PACKAGE__->load_classes;
-
-
-# Created by DBIx::Class::Schema::Loader v0.04005 @ 2009-02-06 22:22:39
-# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:QZweZnFFo+HHaYLttmwkpQ
+__PACKAGE__->load_namespaces;
 
 
-# You can replace this text with custom content, and it will be preserved on regeneration
+# Created by DBIx::Class::Schema::Loader v0.07010 @ 2011-04-04 18:08:59
+# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:VDR/2sjcBiX8383UW1hUsg
+
+
+# You can replace this text with custom code or comments, and it will be preserved on regeneration
+__PACKAGE__->meta->make_immutable(inline_constructor => 0);
 1;
