@@ -9,8 +9,8 @@
         <input type="text" name="username" id="username" />
         <input type="password" name="password" id="password" />
         <div class="align-center fake-buttons">
-            <input type="submit" value="[%l('LOG IN')%]" class="fake-button"/>
-            <a href="[%c.uri_for('/user/signup')%]" class="fake-button">[%l('REGISTER NOW')%]</a>
+            <input type="submit" value="[%l('button.login')%]" class="fake-button"/>
+            <a href="[%c.uri_for('/user/signup')%]" class="fake-button">[%l('button.register.now')%]</a>
         </div>
     </form>
 </div>

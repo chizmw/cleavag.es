@@ -1,0 +1,14 @@
+msgid "button.login"
+msgstr "Log-In"
+
+msgid "button.register.now"
+msgstr "Register Now"
+
+msgid "messages.hello.catalyst"
+msgstr "Hello Catalyst - fallback translation"
+
+msgid "message.rate.some.cleavage"
+msgstr "Rate Some Cleavage"
+
+msgid "messages.take.me.to.the.cleavage"
+msgstr "Take Me To The Cleavage"
