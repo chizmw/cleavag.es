@@ -1,5 +1,6 @@
 package Cleavages::Controller::Root;
 use Moose;
+    extends 'Catalyst::Controller::Validation::DFV';
 use namespace::autoclean;
 
 BEGIN { extends 'Catalyst::Controller' }
@@ -32,13 +33,21 @@ sub default :Path {
     $c->stash->{template} = 'error/404';
 }
 
-=head2 end
+sub render : ActionClass('RenderView') {
+    my ($self, $c) = @_;
 
-Attempt to render a view, if needed.
+    # if we have any error(s) in the stash, automatically show the error page
+    if (defined $c->stash->{error}) {
+        $c->stash->{template} = 'error/simple';
+        $c->log->error( $c->stash->{error}{message} );
+    }
+}
 
-=cut
-
-sub end : ActionClass('RenderView') {}
+sub end : Private {
+    my ($self, $c) = @_;
+    $c->forward('render');
+    $c->forward('refill_form'); # from Catalyst::Controller::Validation::DFV
+}
 
 =head1 AUTHOR
 

@@ -21,6 +21,7 @@ use Catalyst qw/
     ConfigLoader
     Static::Simple
     I18N
+    FillInForm
 /;
 
 extends 'Catalyst';
