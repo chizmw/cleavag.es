@@ -7,6 +7,9 @@ msgstr "Log-In"
 msgid "forms.button.register.now"
 msgstr "Register Now"
 
+msgid "form.errors.password.mismatch"
+msgstr "The passwords do not match"
+
 msgid "forms.field.recaptcha"
 msgstr "Prove You Are Human"
 
@@ -27,6 +30,24 @@ msgstr "Confirm Password"
 
 msgid "forms.field.username"
 msgstr "Username"
+
+msgid "forms.missing.email.address"
+msgstr "You must provide an email address"
+
+msgid "forms.missing.firstname"
+msgstr "You must provide your first name"
+
+msgid "forms.missing.lastname"
+msgstr "You must provide your last name"
+
+msgid "forms.missing.password"
+msgstr "You must provide a password"
+
+msgid "forms.missing.password.confirm"
+msgstr "You must confirm your password"
+
+msgid "forms.missing.username"
+msgstr "You must choose a username"
 
 msgid "messages.is.already.registered"
 msgstr "If you've already registered with the site, use the form below to log-in"
@@ -66,3 +87,14 @@ msgstr "Already Registered?"
 
 msgid "questions.register.not.want"
 msgstr "Don't want to register?"
+
+
+
+
+
+# reCAPTCHA errors - we don't have a lot of control over these :(
+msgid "reCAPTCHA"
+msgstr "reCAPTCHA "
+
+msgid "recaptcha.errors.not.submitted"
+msgstr "You need to fill in the reCAPTCHA"

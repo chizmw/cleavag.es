@@ -2,12 +2,12 @@
     SET error_message = {
         # messages for missing fields
         missing => {
-            new_email_address           => 'You must provide your email address',
-            new_first_name              => 'You must provide your first name',
-            new_last_name               => 'You must provide your last name',
-            new_password                => 'You must provide a password',
-            new_password_confirm        => 'You must confirm your password',
-            new_username                => 'You must provide a username',
+            new_email_address           => 'forms.missing.email.address',
+            new_first_name              => 'forms.missing.firstname',
+            new_last_name               => 'forms.missing.lastname',
+            new_password                => 'forms.missing.password',
+            new_password_confirm        => 'forms.missing.password.confirm',
+            new_username                => 'forms.missing.username',
 
             password                    => 'MISSING_PASSWORD',
             username                    => 'MISSING_USERNAME',
@@ -21,7 +21,7 @@
             'american_phone'            => 'should be an American phone number',
             'constraint_confirm_equal'  => 'values do not match',
             'email'                     => 'should be an email address',
-            'passwords-do-not-match'    => 'the passwords do not match',
+            'passwords-do-not-match'    => 'form.errors.password.mismatch',
             'username-not-unique'       => 'the requested username is already in use',
             'cleavage-file-missing'     => 'MISSING CLEAVAGE FILE',
             'cleavage-wrong-mimetype'   => 'CLEAVAGE WRONG MIMETYPE',
@@ -32,6 +32,7 @@
             # reCAPTCHA messages (from: http://recaptcha.net/apidocs/captcha/)
             'incorrect-captcha-sol'     => 'the CAPTCHA solution was incorrect',
             'recaptcha-not-reachable'   => 'unable to contact the reCAPTCHA verify server',
+            'User appears not to have submitted a recaptcha' => 'recaptcha.errors.not.submitted',
         },
 
         # mappings from field names to something we'd like to show the user
@@ -44,6 +45,7 @@
             new_username                => 'Username',
             cleavage_file               => 'FORM CLEAVAGE FILE',
             login_credentials           => 'LOGIN_CREDENTIALS',
+            new_password_confirm        => 'forms.field.password.confirm',
         },
     }
 %]
