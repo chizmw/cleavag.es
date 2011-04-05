@@ -7,6 +7,10 @@ use namespace::autoclean;
 
 BEGIN { extends 'Catalyst::Controller'; }
 
+# for password hashing
+# TODO: check and see if we still need this with newer plugins/DBIC
+use Digest::MD5 qw< md5_hex >;
+
 # form validation modules
 use Cleavages::DFV qw(:constraints);
 use Data::FormValidator::Constraints qw(:closures);
@@ -129,6 +133,24 @@ sub user_signup :Private {
 
     return;
 }
+
+sub _txn_add_user {
+    my ($self, $c) = @_;
+    my $results = $c->stash->{validation};
+
+    # create the new user
+    my $new_auth = $c->model('Cleavages::Person')
+        ->create({
+            username    => $results->valid('new_username'),
+            password    => md5_hex($results->valid('new_password')),
+            first_name  => $results->valid('new_first_name'),
+            last_name   => $results->valid('new_last_name'),
+            email       => $results->valid('new_email_address'),
+        })
+    ;
+    return;
+}
+
 
 __PACKAGE__->meta->make_immutable;
 

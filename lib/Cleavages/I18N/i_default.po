@@ -7,8 +7,14 @@ msgstr "Log-In"
 msgid "forms.button.register.now"
 msgstr "Register Now"
 
-msgid "form.errors.password.mismatch"
+msgid "forms.error.password.mismatch"
 msgstr "The passwords do not match"
+
+msgid "forms.error.recaptcha.not.submitted"
+msgstr "You need to fill in the reCAPTCHA"
+
+msgid "forms.error.username.taken"
+msgstr "That username is already registered"
 
 msgid "forms.field.recaptcha"
 msgstr "Prove You Are Human"
@@ -27,6 +33,9 @@ msgstr "Password"
 
 msgid "forms.field.password.confirm"
 msgstr "Confirm Password"
+
+msgid "forms.field.recaptcha"
+msgstr "reCAPTCHA"
 
 msgid "forms.field.username"
 msgstr "Username"
@@ -93,14 +102,3 @@ msgstr "Already Registered?"
 
 msgid "questions.register.not.want"
 msgstr "Don't want to register?"
-
-
-
-
-
-# reCAPTCHA errors - we don't have a lot of control over these :(
-msgid "reCAPTCHA"
-msgstr "reCAPTCHA "
-
-msgid "recaptcha.errors.not.submitted"
-msgstr "You need to fill in the reCAPTCHA"
