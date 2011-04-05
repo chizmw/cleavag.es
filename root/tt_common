@@ -1,3 +1,6 @@
 [% MACRO l(text, args) BLOCK;
-    c.i18nise (text, args) || 'i18n broken:' _ text;
+    IF text;
+        SET t9n = c.i18nise (text, args);
+        IF t9n != text; t9n; ELSE; 'missing i18n for token: «' _ text _ '»'; END;
+    END;
 END; %]
