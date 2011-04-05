@@ -104,7 +104,6 @@ sub user_signup :Private {
     if ($c->stash->{validation}->success) {
         # add the new user in a transaction
         eval {
-            #$c->stash->{schema}->txn_do(
             my $schema = $c->model('Cleavages::Person')->result_source->schema;
             $schema->txn_do(
                 sub { $self->_txn_add_user($c) }
