@@ -70,7 +70,11 @@ sub random_cleavage : Chained('cleavage_base') PathPart('random') Args(0) {
     return;
 }
 
-
+sub upload : Chained('cleavage_base') PathPart('upload') Args(0) {
+    my ($self,$c) = @_;
+    $c->detach('/upload/cleavage');
+    return;
+}
 
 __PACKAGE__->meta->make_immutable;
 
