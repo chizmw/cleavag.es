@@ -1,1 +1,6 @@
-<h1>There's No Cleavage!</h1>
+<h1>[%l('messages.no.cleavage')%]</h1>
+<p>[%l('messages.no.cleavage.solution')%]</p>
+
+<div class="align-center top-padded fake-buttons">
+    <a class="fake-button" href="[%c.uri_for('/cleavage/upload')%]">[%l('forms.button.upload.cleavage')%]</a>
+</div>

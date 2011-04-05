@@ -7,6 +7,9 @@ msgstr "Log-In"
 msgid "forms.button.register.now"
 msgstr "Register Now"
 
+msgid "forms.button.upload.cleavage"
+msgstr "Upload Cleavage"
+
 msgid "forms.error.password.mismatch"
 msgstr "The passwords do not match"
 
@@ -78,6 +81,12 @@ msgstr "Hello Catalyst - fallback translation"
 
 msgid "messages.login.required"
 msgstr "Log-In To Continue"
+
+msgid "messages.no.cleavage"
+msgstr "There's No Cleavage!"
+
+msgid "messages.no.cleavage.solution"
+msgstr "As the first user of this new site why not get the ball rolling and upload some cleavage for people to rate?"
 
 msgid "messages.page.not.found"
 msgstr "Page Not Found"
