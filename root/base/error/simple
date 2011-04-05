@@ -1,0 +1,11 @@
+[% IF error %]
+<h1>[%l('messages.error.occurred')%]</h1>
+
+<p>
+[%l('messages.following.error.returned')%]:
+
+<blockquote style="white-space:pre;">[% error.message %]</blockquote>
+</p>
+[% END %]
+
+<div style="height:200px;"></div>

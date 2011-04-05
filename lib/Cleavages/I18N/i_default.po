@@ -58,6 +58,12 @@ msgstr "Back To The Cleavage"
 msgid "messages.cleavage"
 msgstr "Cleavage"
 
+msgid "messages.error.occurred"
+msgstr "An error has occurred"
+
+msgid "messages.following.error.returned"
+msgstr "The following error message was returned by the application"
+
 msgid "messages.hello.catalyst"
 msgstr "Hello Catalyst - fallback translation"
 
