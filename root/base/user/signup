@@ -1,6 +1,6 @@
 [% IF login_reason %]
 <div class="yui-g">
-    <h1 class="firstContent">[%l('LOGIN REQUIRED')%]</h1>
+    <h1 class="firstContent">[%l('messages.login.required')%]</h1>
 </div>
 
 <div class="yui-gb">
@@ -20,11 +20,11 @@
 [% END %]
 
 <div class="yui-g">
-    <h1 class="firstContent">[%l('ALREADY REGISTERED')%]</h1>
+    <h1 class="firstContent">[%l('questions.already.registered')%]</h1>
 </div>
 
 <p>
-[%l('IF ALREADY REGISTERED')%]
+[%l('messages.is.already.registered')%]
 </p>
 
 <form action="[%c.uri_for('/user/login')%]" method="post" name="login_form" id="login_form">
@@ -33,7 +33,7 @@
     <div class="yui-gb top-padded">
         <div class="yui-u first">
             <div>
-                <label for="username">[%l('USERNAME')%]:</label>
+                <label for="username">[%l('forms.field.username')%]:</label>
             </div>
         </div>
         <div class="yui-u">
@@ -46,7 +46,7 @@
 
     <div class="yui-gb top-padded">
         <div class="yui-u first">
-            <label for="password">[%l('PASSWORD')%]:</label>
+            <label for="password">[%l('forms.field.password')%]:</label>
         </div>
         <div class="yui-u">
             <input type="password" name="password" id="password" />
@@ -58,14 +58,14 @@
 
     <div class="yui-g top-padded">
         <div class="align-center fake-buttons">
-            <input type="submit" value="[%l('LOG IN')%]" class="fake-button" />
+            <input type="submit" value="[%l('forms.button.login')%]" class="fake-button" />
         </div>
     </div>
 </form>
 
 
 <div class="yui-g">
-    <h1 class="firstContent">[%l('DONT_WANT_TO_REGISTER')%]</h1>
+    <h1 class="firstContent">[%l('questions.register.not.want')%]</h1>
 </div>
     <div class="yui-gb">
         <div class="yui-u first">
@@ -73,7 +73,7 @@
         </div>
 
         <div class="yui-u">
-        [%l('IF_YOU_DONT_WANT_TO_REGISTER')%]
+        [%l('messages.register.not.want')%]
         </div>
 
         <div class="yui-u">
@@ -83,12 +83,12 @@
 
     <div class="align-center top-padded fake-buttons">
         <a class="fake-button"
-        href="[%c.uri_for('/cleavage/random')%]">[%l('BACK_TO_CLEAVAGE')%]</a>
+        href="[%c.uri_for('/cleavage/random')%]">[%l('messages.back.to.cleavage')%]</a>
     </div>
 
 
 <div class="yui-g top-padded">
-    <h1 class="firstContent">[%l('REGISTER NOW')%]</h1>
+    <h1 class="firstContent">[%l('messages.register.now')%]</h1>
 </div>
 
 <!-- SIGNUP FORM -->
@@ -98,7 +98,7 @@
     <div class="yui-gb top-padded">
         <div class="yui-u first">
             <div>
-                <label for="new_first_name">[%l('FIRST NAME')%]:</label>
+                <label for="new_first_name">[%l('forms.field.firstname')%]:</label>
             </div>
         </div>
         <div class="yui-u">
@@ -112,7 +112,7 @@
     <div class="yui-gb top-padded">
         <div class="yui-u first">
             <div>
-                <label for="new_last_name">[%l('LAST NAME')%]:</label>
+                <label for="new_last_name">[%l('forms.field.lastname')%]:</label>
             </div>
         </div>
         <div class="yui-u">
@@ -126,7 +126,7 @@
     <div class="yui-gb top-padded">
         <div class="yui-u first">
             <div>
-                <label for="new_email_address">[%l('EMAIL ADDRESS')%]:</label>
+                <label for="new_email_address">[%l('forms.field.email.address')%]:</label>
             </div>
         </div>
         <div class="yui-u">
@@ -143,7 +143,7 @@
     <div class="yui-gb top-padded">
         <div class="yui-u first">
             <div>
-                <label for="new_username">[%l('USERNAME')%]:</label>
+                <label for="new_username">[%l('forms.field.username')%]:</label>
             </div>
         </div>
         <div class="yui-u">
@@ -156,7 +156,7 @@
 
     <div class="yui-gb top-padded">
         <div class="yui-u first">
-            <label for="new_password">[%l('PASSWORD')%]:</label>
+            <label for="new_password">[%l('forms.field.password')%]:</label>
         </div>
         <div class="yui-u">
             <input type="password" name="new_password" id="new_password" />
@@ -168,7 +168,7 @@
 
     <div class="yui-gb top-padded">
         <div class="yui-u first">
-            <label for="password_confirm">[%l('PASSWORD CONFIRM')%]:</label>
+            <label for="password_confirm">[%l('forms.field.password.confirm')%]:</label>
         </div>
         <div class="yui-u">
             <input type="password" name="new_password_confirm" id="new_password_confirm" />
@@ -181,7 +181,7 @@
     [% IF recaptcha %] [% # only show reCAPTCHA if we have one; it may not be enabled %]
     <div class="yui-gb top-padded" id="recaptcha">
         <div class="yui-u first">
-            [%l('PROVE YOU ARE HUMAN')%]:
+            [%l('forms.field.recaptcha')%]:
         </div>
         <div class="yui-u">
             [% recaptcha %]
@@ -195,7 +195,7 @@
 
     <div class="yui-g top-padded">
         <div class="align-center fake-buttons">
-            <input type="submit" value="[%l('CREATE ACCOUNT')%]" class="fake-button" />
+            <input type="submit" value="[%l('forms.button.create.account')%]" class="fake-button" />
         </div>
     </div>
 </form>

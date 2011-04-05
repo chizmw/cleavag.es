@@ -1,8 +1,38 @@
-msgid "button.login"
+msgid "forms.button.create.account"
+msgstr "Create Account"
+
+msgid "forms.button.login"
 msgstr "Log-In"
 
-msgid "button.register.now"
+msgid "forms.button.register.now"
 msgstr "Register Now"
+
+msgid "forms.field.recaptcha"
+msgstr "Prove You Are Human"
+
+msgid "forms.field.email.address"
+msgstr "Email Address"
+
+msgid "forms.field.firstname"
+msgstr "First Name"
+
+msgid "forms.field.lastname"
+msgstr "Last Name"
+
+msgid "forms.field.password"
+msgstr "Password"
+
+msgid "forms.field.password.confirm"
+msgstr "Confirm Password"
+
+msgid "forms.field.username"
+msgstr "Username"
+
+msgid "messages.is.already.registered"
+msgstr "If you've already registered with the site, use the form below to log-in"
+
+msgid "messages.back.to.cleavage"
+msgstr "Back To The Cleavage"
 
 msgid "messages.cleavage"
 msgstr "Cleavage"
@@ -10,14 +40,29 @@ msgstr "Cleavage"
 msgid "messages.hello.catalyst"
 msgstr "Hello Catalyst - fallback translation"
 
+msgid "messages.login.required"
+msgstr "Log-In To Continue"
+
 msgid "messages.page.not.found"
 msgstr "Page Not Found"
 
 msgid "message.rate.some.cleavage"
 msgstr "Rate Some Cleavage"
 
+msgid "messages.register.not.want"
+msgstr "If you would prefer not to register at this time you may still explore the site and rate images."
+
+msgid "messages.register.now"
+msgstr "Register Now"
+
 msgid "messages.requested.page.missing"
 msgstr "The requested page is not available"
 
 msgid "messages.take.me.to.the.cleavage"
 msgstr "Take Me To The Cleavage"
+
+msgid "questions.already.registered"
+msgstr "Already Registered?"
+
+msgid "questions.register.not.want"
+msgstr "Don't want to register?"
