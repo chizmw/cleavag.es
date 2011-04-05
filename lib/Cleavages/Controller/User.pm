@@ -151,6 +151,69 @@ sub _txn_add_user {
     return;
 }
 
+sub login : Chained('user_base') PathPart('login') Args(0) {
+    my ($self, $c) = @_;
+
+    # logged-in? no need to login again...
+    if ($c->is_logged_in()) {
+        $c->detach('/app_root');
+    }
+
+    # a reason why we're here?
+    $c->stash->{login_reason} =
+        delete $c->session->{login_reason};
+
+    # store somewhere to go after login (if we don't already have somewhere to
+    # go)
+    $c->session->{after_login} ||= (
+           $c->request->referer()
+        || $c->uri_for( $c->config->{default_uri} )
+    );
+    $c->log->debug( 'After Login We Will Go To: ' . $c->session->{after_login} );
+
+    # deal with form submissions
+    if (
+        defined $c->request->method()
+            and $c->request->method() eq 'POST'
+    ) {
+        $c->forward('form_check', [$dfv_profile_for{login}]);
+
+        if ($c->stash->{validation}->success) {
+            my $login_ok = $c->authenticate(
+                {
+                    username => $c->request->body_parameters->{username},
+                    password => $c->request->body_parameters->{password},
+                    status => [ 'registered', 'loggedin', 'active']
+                }
+            );
+
+            if ($login_ok) {
+                # send them back to where they came from
+                if ($c->session->{after_login}) {
+                    $c->response->redirect(
+                        delete($c->session->{after_login})
+                    );
+                    $c->detach;
+                }
+
+                # otherwise just show the default page
+                $c->detach('/app_root');
+            }
+            else {
+                # let them know they couldn't get their details right
+                $c->forward(
+                    'add_form_invalid',
+                    [ 'login_credentials', 'no-matching-users' ]
+                );
+            }
+        }
+    }
+
+    $c->stash->{template} = q{user/signup};
+
+    return;
+}
+
 
 __PACKAGE__->meta->make_immutable;
 

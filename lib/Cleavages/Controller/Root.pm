@@ -20,6 +20,11 @@ sub index :Chained('language') :Path :Args(0) {
     $c->forward('/cleavage/top_cleavage');
 }
 
+sub app_root : Chained PathPart('') Args(0) {
+    my ($self, $c) = @_;
+    # redirect to the default action
+    $c->response->redirect( $c->uri_for($c->config->{default_uri}) );
+}
 =head2 default
 
 Standard 404 error page

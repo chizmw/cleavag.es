@@ -22,6 +22,12 @@ use Catalyst qw/
     Static::Simple
     I18N
     FillInForm
+
+    Session
+    Session::Store::DBIC
+    Session::State::Cookie
+
+    Authentication
 /;
 
 extends 'Catalyst';
@@ -46,12 +52,23 @@ __PACKAGE__->config(
 # Start the application
 __PACKAGE__->setup();
 
+# shortcut call to make i18n easier in TT
 sub i18nise {
     my ($c, $msgid, $msgargs) = @_;
     return $c->localize(
         $msgid,
         $msgargs
     );
+}
+
+# do we have a logged-in user?
+sub is_logged_in {
+    my ($c) = @_;
+
+    return 1
+        if ($c->user);
+
+    return 0;
 }
 
 
