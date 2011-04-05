@@ -283,6 +283,8 @@ div#user_gravatar {
     text-align:             left;
     border:                 none;
     z-index:                -1;
+    opacity:                0.3;
+    filter:                 alpha(opacity=30)
 }
 div#user_gravatar>img {
     border:                 1px solid #333;
