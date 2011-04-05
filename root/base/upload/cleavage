@@ -1,90 +1,91 @@
 <div style="height:25px"></div>
 
 <form action="" method="post" enctype="multipart/form-data">
-    <p class="upload-title top-padded">[%l('SELECT CLEAVAGE')%]:</p>
+    <p class="upload-title top-padded">[%l('forms.field.cleavage.file.browse')%]:</p>
 
     <input type="file" id="cleavage_file" name="cleavage_file" />
 
-    <p class="upload-title top-padded">[%l('CLASSIFY CLEAVAGE')%]:</p>
+    <p class="upload-title top-padded">[%l('forms.field.cleavage.classify')%]:</p>
 
-    <p class="upload-heading top-padded">[%l('CLEAVAGE GENDER')%]:</p>
+    <p class="upload-heading top-padded">[%l('forms.field.cleavage.classify.gender')%]:</p>
 
     <div style="width:300px; margin-left:auto; margin-right: auto;" class="yui-g">
         <div class="yui-u first">
-            <label for="radio_gender_female"><img src="[%c.uri_for('/static/images/icon_80_female.gif')%]" alt="[%l('FEMALE')%]" width="80" height="80" /></label>
+            <label for="radio_gender_female"><img
+            src="[%c.uri_for('/static/images/icon_80_female.gif')%]" alt="[%l('forms.field.female')%]" width="80" height="80" /></label>
             <br />
             <input type="radio" name="gender" id="radio_gender_female" value="Female" checked="checked" />
-            <label for="radio_gender_female">[%l('FEMALE')%]</label>
+            <label for="radio_gender_female">[%l('forms.field.female')%]</label>
         </div>
 
         <div class="yui-u">
-            <label for="radio_gender_male"><img src="[%c.uri_for('/static/images/icon_80_male.gif')%]" alt="[%l('MALE')%]" width="80" height="80" /></label>
+            <label for="radio_gender_male"><img src="[%c.uri_for('/static/images/icon_80_male.gif')%]" alt="[%l('forms.field.male')%]" width="80" height="80" /></label>
             <br />
             <input type="radio" name="gender" id="radio_gender_male" value="Male" />
-            <label for="radio_gender_male">[%l('MALE')%]</label>
+            <label for="radio_gender_male">[%l('forms.field.male')%]</label>
         </div>
     </div>
 
-    <p class="upload-heading top-padded">[%l('CLEAVAGE LOCATION')%]:</p>
+    <p class="upload-heading top-padded">[%l('forms.field.cleavage.classify.location')%]:</p>
 
     <div style="width:300px; margin-left:auto; margin-right: auto;" class="yui-g">
         <div class="yui-u first">
-            <label for="radio_cleavage_top"><img src="[%c.uri_for('/static/images/icon_80_topclv.gif')%]" alt="[%l('TOP-CLEAVAGE')%]" width="80" height="80" /></label>
+            <label for="radio_cleavage_top"><img src="[%c.uri_for('/static/images/icon_80_topclv.gif')%]" alt="[%l('forms.field.top.cleavage')%]" width="80" height="80" /></label>
             <br />
             <input type="radio" name="cleavage_type" id="radio_cleavage_top" value="Top" checked="checked" />
-            <label for="radio_cleavage_top">[%l('TOP-CLEAVAGE')%]</label>
+            <label for="radio_cleavage_top">[%l('forms.field.top.cleavage')%]</label>
         </div>
 
         <div class="yui-u">
-            <label for="radio_cleavage_bottom"><img src="[%c.uri_for('/static/images/icon_80_botclv.gif')%]" alt="[%l('BOTTOM-CLEAVAGE')%]" width="80" height="80" /></label>
+            <label for="radio_cleavage_bottom"><img src="[%c.uri_for('/static/images/icon_80_botclv.gif')%]" alt="[%l('forms.field.bottom.cleavage')%]" width="80" height="80" /></label>
             <br />
             <input type="radio" name="cleavage_type" id="radio_cleavage_bottom" value="Bottom" />
-            <label for="radio_cleavage_bottom">[%l('BOTTOM-CLEAVAGE')%]</label>
+            <label for="radio_cleavage_bottom">[%l('forms.field.bottom.cleavage')%]</label>
         </div>
     </div>
 
-    <p class="upload-heading top-padded">[%l('CLEAVAGE RELATION')%]</p>
+    <p class="upload-heading top-padded">[%l('forms.field.cleavage.classify.relationship')%]</p>
 
     <div style="width:400px; margin-left:auto; margin-right: auto;" class="yui-gb">
         <div class="yui-u first">
-            <label for="radio_relation_mine"><img src="[%c.uri_for('/static/images/icon_80_mine.gif')%]" alt="[%l('TOP-CLEAVAGE')%]" width="80" height="80" /></label>
+            <label for="radio_relation_mine"><img src="[%c.uri_for('/static/images/icon_80_mine.gif')%]" alt="[%l('forms.field.cleavage.mine')%]" width="80" height="80" /></label>
             <br />
             <input type="radio" name="cleavage_relation" id="radio_relation_mine" value="1" />
-            <label for="radio_relation_mine">[%l('CLEAVAGE-MINE')%]</label>
+            <label for="radio_relation_mine">[%l('forms.field.cleavage.mine')%]</label>
         </div>
 
         <div class="yui-u">
-            <label for="radio_relation_known"><img src="[%c.uri_for('/static/images/icon_80_known.gif')%]" alt="[%l('BOTTOM-CLEAVAGE')%]" width="80" height="80" /></label>
+            <label for="radio_relation_known"><img src="[%c.uri_for('/static/images/icon_80_known.gif')%]" alt="[%l('forms.field.cleavage.known')%]" width="80" height="80" /></label>
             <br />
             <input type="radio" name="cleavage_relation" id="radio_relation_known" value="2" />
-            <label for="radio_relation_known">[%l('CLEAVAGE-KNOWN')%]</label>
+            <label for="radio_relation_known">[%l('forms.field.cleavage.known')%]</label>
         </div>
 
         <div class="yui-u">
-            <label for="radio_relation_random"><img src="[%c.uri_for('/static/images/icon_80_relunkn.gif')%]" alt="[%l('BOTTOM-CLEAVAGE')%]" width="80" height="80" /></label>
+            <label for="radio_relation_random"><img src="[%c.uri_for('/static/images/icon_80_relunkn.gif')%]" alt="[%l('forms.field.cleavage.random')%]" width="80" height="80" /></label>
             <br />
             <input type="radio" name="cleavage_relation" id="radio_relation_random" value="3" checked="checked" />
-            <label for="radio_relation_random">[%l('CLEAVAGE-RANDOM')%]</label>
+            <label for="radio_relation_random">[%l('forms.field.cleavage.random')%]</label>
         </div>
     </div>
 
     <div style="width:500px; margin-left:auto; margin-right: auto;" class="yui-g top-padded">
-        <label for="attribution_url">[%l('ATTRIBUTION_URL')%]</label>
+        <label for="attribution_url">[%l('forms.field.attribution.url')%]</label>
         <input type="text" value="http://" name="attribution_url" id="attribution_url" size="30" onFocus="this.select()"/>
     </div>
 
     <div style="width:500px; margin-left:auto; margin-right: auto;" class="yui-g top-padded">
         <input type="checkbox" name="remain_anonymous" id="remain_anonymous" value="1" />
-        <label for="remain_anonymous">[%l('REMAIN_ANONYMOUS')%]</label>
+        <label for="remain_anonymous">[%l('forms.field.remain.anonymous')%]</label>
     </div>
 
     <div style="width:500px; margin-left:auto; margin-right: auto;" class="yui-g top-padded">
         <input type="checkbox" name="verified_permission" id="verified_permission" value="1" />
-        <label for="verified_permission">[%l('VERIFY_UPLOAD_PERMISSION')%]</label>
+        <label for="verified_permission">[%l('forms.field.verify.permission')%]</label>
     </div>
 
     <div style="width:300px; margin-left:auto; margin-right: auto;" class="yui-g top-padded">
-        <input type="submit" value="[%l('UPLOAD_CLEAVAGE')%]" />
+        <input type="submit" value="[%l('forms.button.upload.cleavage')%]" />
     </div>
 </form>
 

@@ -11,7 +11,7 @@
 
             password                    => 'MISSING_PASSWORD',
             username                    => 'MISSING_USERNAME',
-            verified_permission         => 'MISSING_UPLOAD_VERIFICATION',
+            verified_permission         => 'forms.missing.verify.permission',
 
             moon_stick                  => 'I demand the MOON! On a STICK!',
         },
@@ -23,8 +23,8 @@
             'email'                     => 'should be an email address',
             'passwords-do-not-match'    => 'forms.error.password.mismatch',
             'username-not-unique'       => 'forms.error.username.taken',
-            'cleavage-file-missing'     => 'MISSING CLEAVAGE FILE',
-            'cleavage-wrong-mimetype'   => 'CLEAVAGE WRONG MIMETYPE',
+            'cleavage-file-missing'     => 'forms.missing.cleavage.file',
+            'cleavage-wrong-mimetype'   => 'forms.error.wrong.mimetype',
             'image-too-large'           => 'IMAGE TOO LARGE',
             'rating-out-of-range'       => 'RATING OUT OF RANGE',
             'no-matching-users'         => 'NO_MATCHING_USERS',
@@ -43,7 +43,7 @@
             recaptcha                   => 'forms.field.recaptcha',
             username                    => 'forms.field.username',
             new_username                => 'forms.field.username',
-            cleavage_file               => 'FORM CLEAVAGE FILE',
+            cleavage_file               => 'forms.field.cleavage.file.upload',
             login_credentials           => 'LOGIN_CREDENTIALS',
             new_password_confirm        => 'forms.field.password.confirm',
         },

@@ -31,6 +31,10 @@ use Catalyst qw/
     Session::State::Cookie
 
     Authentication
+
+    Images
+    Upload::Digest
+    Upload::MIME
 /;
 
 extends 'Catalyst';

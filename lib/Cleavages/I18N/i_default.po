@@ -19,17 +19,56 @@ msgstr "You need to fill in the reCAPTCHA"
 msgid "forms.error.username.taken"
 msgstr "That username is already registered"
 
-msgid "forms.field.recaptcha"
-msgstr "Prove You Are Human"
+msgid "forms.error.wrong.mimetype"
+msgstr "Only image files (jpg, gif, png) are accepted"
+
+msgid "forms.field.attribution.url"
+msgstr "Attribution URL (optional)"
+
+msgid "forms.field.bottom.cleavage"
+msgstr "Bottom Cleavage"
+
+msgid "forms.field.cleavage.classify"
+msgstr "Classify the cleavage"
+
+msgid "forms.field.cleavage.classify.gender"
+msgstr "This cleavage belongs to someone who is"
+
+msgid "forms.field.cleavage.classify.location"
+msgstr "This cleavage is"
+
+msgid "forms.field.cleavage.classify.relationship"
+msgstr "What is your relation to this cleavage?"
+
+msgid "forms.field.cleavage.file.browse"
+msgstr "Select the cleavage to upload"
+
+msgid "forms.field.cleavage.file.upload"
+msgstr "Cleavage file"
+
+msgid "forms.field.cleavage.known"
+msgstr "I know its owner"
+
+msgid "forms.field.cleavage.mine"
+msgstr "It is mine"
+
+msgid "forms.field.cleavage.random"
+msgstr "I have no idea whose it is"
 
 msgid "forms.field.email.address"
 msgstr "Email Address"
+
+msgid "forms.field.female"
+msgstr "Female"
 
 msgid "forms.field.firstname"
 msgstr "First Name"
 
 msgid "forms.field.lastname"
 msgstr "Last Name"
+
+msgid "forms.field.male"
+msgstr "Male"
 
 msgid "forms.field.password"
 msgstr "Password"
@@ -40,8 +79,20 @@ msgstr "Confirm Password"
 msgid "forms.field.recaptcha"
 msgstr "reCAPTCHA"
 
+msgid "forms.field.remain.anonymous"
+msgstr "Remain Anonymous (do not reveal to other users that you uploaded this file)"
+
+msgid "forms.field.top.cleavage"
+msgstr "Top Cleavage"
+
 msgid "forms.field.username"
 msgstr "Username"
+
+msgid "forms.field.verify.permission"
+msgstr "I confirm that I have the right to distribute this photo"
+
+msgid "forms.missing.cleavage.file"
+msgstr "Please specify some cleavage to upload"
 
 msgid "forms.missing.email.address"
 msgstr "You must provide an email address"
@@ -60,6 +111,9 @@ msgstr "You must confirm your password"
 
 msgid "forms.missing.username"
 msgstr "You must choose a username"
+
+msgid "forms.missing.verify.permission"
+msgstr "You may only upload files after confirming that you have the right to do so"
 
 msgid "messages.is.already.registered"
 msgstr "If you've already registered with the site, use the form below to log-in"
