@@ -23,6 +23,9 @@ use Catalyst qw/
     I18N
     FillInForm
 
+    StackTrace
+    ErrorCatcher
+
     Session
     Session::Store::DBIC
     Session::State::Cookie
